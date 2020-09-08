@@ -1,7 +1,11 @@
 # Личный проект «Техномарт»
 
 * Студент: [Mark Morgunov](https://up.htmlacademy.ru/htmlcss/29/user/1415187).
+<<<<<<< HEAD
 * Наставник: [Андрей Жилин] (https://up.htmlacademy.ru/htmlcss/29/user/533465).
+=======
+* Наставник: `Неизвестно`.
+>>>>>>> parent of 9fbb25c... Update Readme.md
 
 ---
 
