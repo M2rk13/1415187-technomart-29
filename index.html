@@ -1,12 +1,173 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="utf-8">
-    <title>HTML Academy: Техномарт</title>
-  </head>
-  <body>
-
-    <p>Репозиторий создан для обучения на профессиональном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/htmlcss">HTML и CSS, уровень 1</a>».</p>
-
-  </body>
+	<head>
+		<meta charset="utf-8">
+		<title>ТЕХНОМАРТ - Главная</title>
+	</head>
+	<body>
+		<header>
+			<span>
+				<a href="index.html" title="Главная">Техномарт</a>
+				<input> <!-- форма поиска, на потом -->
+				<!-- учитывая, что popup нет для "Закладки", "Корзина", "Оформить заказ", "Войти", "Регистрация" - считаем, что это ссылки на другие страницы, по ТЗ оставить пустыми, пока оставил так, чтобы выглядело лучше -->
+				<a href="blank.html" title="Отложенный товар">Закладки</a>
+				<a href="blank.html" title="Посмотреть корзину">Корзина</a>
+				<a href="blank.html" title="Оформить заказ">Оформить заказ</a>
+			</span>
+			<div>
+				<p>Интернет-магазин<br>строительных материалов<br>и инструментов для ремонта</p>
+				
+				<div>
+					<h1>Магазин Техномарт</h1><!-- hidden -->
+					<p>
+						<img src="#" width="" height="" alt="тел.: ">
+						<a href="tel:+78125550555" title="позвонить нам">+7 (812) 555-05-55</a>
+						<adress>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</adress>
+					</p>
+				</div>
+				<div>
+					<a href="blank.html" title="Войти в личный кабинет">Войти</a>
+					<a href="blank.html" title="Впервые у нас? Зарегистрируйтесь!">Регистрация</a>
+				</div>
+			</div>
+			<nav> 
+				<li><a href="index.html">Главная</a></li>
+				<li><a href="blank.html">Компания</a></li>
+				<li><a href="catalog.html">Каталог</a></li>
+				<li><a href="blank.html">Новости</a></li>
+				<li><a href="blank.html">Спецпредложения</a></li>
+				<li><a href="blank.html">Доставка</a></li>
+				<li><a href="blank.html">Контакты</a></li>
+			</nav>
+			
+		</header>
+		<main>
+			<section>
+				<section>
+					<ul>
+						<li>
+							<div>
+								<h3>Дрели</h3>
+								<p>Соседям на радость!</p>
+							</div>
+							<img src="#" width="" height="" alt="Дрели">
+						</li>
+						<li>
+							<div>
+								<h3>Перфораторы</h3>
+								<p>Настоящие мужские игрушки</p>
+							</div>
+							<img src="#" width="" height="" alt="Перфораторы">
+						</li>
+					</ul>
+					<div>
+						<!-- стайдер: ?disabled? радиокнопки <input>-->
+					</div>
+					<button type="button">Открыть каталог</button> <!-- Передается атрибут (текущее положение), который влияет на фильтр в каталоге -->
+					<div>
+						<!-- Круговое переключение -->
+						<button type="button">Назад</button>
+						<button type="button">Вперед</button>
+					</div>
+				</section>			
+				<ul>
+					<li>
+						<a href="blank.html">
+							<h3>Материалы</h3>
+							<p>на любой вкус</p>
+						</a>
+					</li>
+					<li>
+						<a href="blank.html">
+							<h3>Инструмент</h3>
+							<p>на все случаи</p>
+						</a>
+					</li>
+					<li>
+						<a href="blank.html">
+							<h3>Техника</h3>
+							<p>для стройки</p>
+						</a>
+					</li>
+					<li>
+						<a href="blank.html">
+							<h3>Скидки 50%</h3>
+							<p>на 350 товаров</p>
+						</a>
+					</li>
+					<li>
+						<a href="blank.html">
+							<h3>Доставка</h3>
+							<p>бесплатно</p>
+						</a>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Популярные товары:</h2>
+				<button type="button">Все популярные товары</button>
+				<ul>
+					<li>
+						<p></p>
+						<img scr="" width="" height="" alt="Перфоратор BOSCH BFG 9000">
+						<h3>Перфоратор BOSCH BFG 9000"</h3>
+						<del>32500 Р.</del>
+						<button type="button">25500 Р.</button>
+					</li>
+					<li>
+						<p>new</p>
+						<img scr="" width="" height="" alt="Перфоратор BOSCH BFG 3000">
+						<h3>Перфоратор BOSCH BFG 3000"</h3>
+						<del>22500 Р.</del>
+						<button type="button">15500 Р.</button>
+					</li>
+					<li>
+						<p></p>
+						<img scr="" width="" height="" alt="Перфоратор BOSCH BFG 6000">
+						<h3>Перфоратор BOSCH BFG 6000"</h3>
+						<del>30500 Р.</del>
+						<button type="button">25500 Р.</button>
+					</li>
+					<li>
+						<p>new</p>
+						<img scr="" width="" height="" alt="Перфоратор BOSCH BFG 2000">
+						<h3>Перфоратор BOSCH BFG 2000"</h3>
+						<del></del>
+						<button type="button">15500 Р.</button>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Популярные производители:</h2>
+				<button type="button">Все производители</button>
+				<div> <!-- флексы? -->
+					<div>
+						<a href="" title="Каталог техники BOSCH"><img src="#" width="" height="" alt="BOSCH"></a>
+					</div>
+					<div>
+						<a href="" title="Каталог техники Makita"><img src="#" width="" height="" alt="Makita"></a>
+					</div>
+					<div>
+						<a href="" title="Каталог техники DeWALT"><img src="#" width="" height="" alt="DeWALT"></a>
+					</div>
+					<div>
+						<a href="" title="Каталог техники ИНТЕРСКОЛ"><img src="#" width="" height="" alt="ИНТЕРСКОЛ"></a>
+					</div>
+					<div>
+						<a href="" title="Каталог техники HITACHI"><img src="#" width="" height="" alt="HITACHI"></a>
+					</div>
+					<div>
+						<a href="" title="Каталог техники LG"><img src="#" width="" height="" alt="LG"></a>
+					</div>
+					<div>
+						<a href="" title="Каталог техники AEG Power Solutions"><img src="#" width="" height="" alt="AEG Power Solutions"></a>
+					</div>
+					<div>
+						<a href="" title="Каталог техники Metabo"><img src="#" width="" height="" alt="Metabo"></a>
+					</div>
+				</div>
+			</section>
+			
+		</main>
+	</body>
 </html>
