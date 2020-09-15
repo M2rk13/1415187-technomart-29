@@ -26,9 +26,20 @@
 					</div>
 				</div>
 				<div>
-                    <span><a href="" title="Войти в личный кабинет"><img src="#" width="1" height="1" alt="">Войти</a></span>
+                    <span><a href="" title="Войти в профиль"><img src="#" width="1" height="1" alt="">Войти</a></span>
 					<span><a href="" title="Впервые у нас? Зарегистрируйтесь!">Регистрация</a></span>
 				</div>
+                <div> <!-- display: none путем добавления/удаления класса через JS -->
+                    <span>
+                        <a href="" title="Войти в личный кабинет"><img src="#" width="1" height="1" alt="">Имя Фамилия</a>
+                        <a href="" title="Выйти из профиля"><img src="#" width="1" height="1" alt=""></a>
+                    </span>
+                    <span>
+                        <a href="" title="Посмотреть мои заказы">Мои заказы</a>
+                        <b>&bull;</b>
+                        <a href="" title="Войти в личный кабинет">Личный кабинет</a>
+                    </span>
+                </div>
 			</div>
 			<nav>
                 <ul>
@@ -122,6 +133,10 @@
 					<li>
 						<span></span>
 						<img src="#" width="1" height="1" alt="Перфоратор BOSCH BFG 9000">
+                        <div> <!-- hover -->
+                            <button type="button"><img src="#" width="1" height="1" alt="">Купить</button>
+                            <button type="button">В закладки</button>
+                        </div>
 						<h3>Перфоратор BOSCH BFG 9000"</h3>
 						<del>32500 Р.</del>
 						<button type="button">25500 Р.</button>
@@ -129,12 +144,20 @@
 					<li>
 						<span>new</span>
 						<img src="#" width="1" height="1" alt="Перфоратор BOSCH BFG 3000">
+                        <div> <!-- hover -->
+                            <button type="button"><img src="#" width="1" height="1" alt="">Купить</button>
+                            <button type="button">В закладки</button>
+                        </div>
 						<h3>Перфоратор BOSCH BFG 3000"</h3>
 						<del>22500 Р.</del>
 						<button type="button">15500 Р.</button>
 					</li>
 					<li>
 						<img src="#" width="1" height="1" alt="Перфоратор BOSCH BFG 6000">
+                        <div> <!-- hover -->
+                            <button type="button"><img src="#" width="1" height="1" alt="">Купить</button>
+                            <button type="button">В закладки</button>
+                        </div>
 						<h3>Перфоратор BOSCH BFG 6000"</h3>
 						<del>30500 Р.</del>
 						<button type="button">25500 Р.</button>
@@ -142,6 +165,10 @@
 					<li>
 						<span>new</span>
 						<img src="#" width="1" height="1" alt="Перфоратор BOSCH BFG 2000">
+                        <div> <!-- hover -->
+                            <button type="button"><img src="#" width="1" height="1" alt="">Купить</button>
+                            <button type="button">В закладки</button>
+                        </div>
 						<h3>Перфоратор BOSCH BFG 2000"</h3>
 						<del></del>
 						<button type="button">15500 Р.</button>
@@ -201,7 +228,7 @@
                 <div>
                     <h3>Кредит</h3>
                     <p>Залезть в долговую яму стало проще!<br>Кредитные консультанты придут вам на помощью</p>
-                    <a href="">Отправить заявку</a>
+                    <button type="button">Отправить заявку</button> <!-- popup написать нам? -->
                     <img src="#" width="1" height="1" alt="">
                 </div>
             </section>
@@ -221,7 +248,7 @@
             <section>
                 <h2>Контакты</h2>
                 <p>Вы можете забрать товар сами, заехав в наш офис:</p>
-                <img src="#" width="1" height="1" alt="схема проезда">
+                <button type="button"><img src="#" width="1" height="1" alt="схема проезда"></button> <!-- popup схема проезда -->
                 <a href="catalog.html">Открыть каталог</a>
             </section>
 		</main>
@@ -256,5 +283,15 @@
                 <span>Разработано -<br><a href="https://htmlacademy.ru/">htmlacademy.ru</a></span>
             </div>
         </footer>
+        <section>
+          <h2>Написать нам</h2> <!-- hidden -->
+          <!-- Здесь будет форма заявки input, textarea, label, submit-->
+          <button type="button">Закрыть</button> <!-- font-size = 0 -->
+        </section>
+        <section>
+          <h2>Схема проезда</h2> <!-- hidden -->
+          <img src="#" width="1" height="1" alt="Большая Конюшенная ул., 19">
+          <button type="button">Закрыть</button>
+        </section>
 	</body>
 </html>

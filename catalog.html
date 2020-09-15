@@ -1,10 +1,92 @@
 <!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Документ без названия</title>
-</head>
-
-<body>
-</body>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>ТЕХНОМАРТ - каталог</title>
+    </head>
+    <body>
+        <header>
+			<div>
+				<a href="index.html" title="Главная">Техномарт</a>
+				<input> <!-- форма поиска, на потом -->
+				<!-- учитывая, что popup нет для "Закладки", "Корзина", "Оформить заказ", "Войти", "Регистрация" - считаем, что это ссылки на другие страницы, по ТЗ оставить пустыми -->
+				<a href="" title="Отложенный товар">Закладки: <span>0</span></a>
+				<a href="" title="Посмотреть корзину">Корзина: <span>10</span></a>
+				<a href="" title="Оформить заказ">Оформить заказ</a>
+			</div>
+			<div>
+				<p>Интернет-магазин<br>строительных материалов<br>и инструментов для ремонта</p>
+				<div>
+					<h1>Магазин Техномарт</h1><!-- hidden -->
+					<div>
+						<img src="#" width="1" height="1" alt="тел.: ">
+						<a href="tel:+78125550555" title="позвонить нам">+7 (812) 555-05-55</a>
+                        <br>
+						<p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
+					</div>
+				</div>
+				<div> <!-- display: none путем добавления/удаления класса через JS -->
+                    <span><a href="" title="Войти в профиль"><img src="#" width="1" height="1" alt="">Войти</a></span>
+					<span><a href="" title="Впервые у нас? Зарегистрируйтесь!">Регистрация</a></span>
+				</div>
+                <div>
+                    <span>
+                        <a href="" title="Войти в личный кабинет"><img src="#" width="1" height="1" alt="">Равшан Джамшудович</a>
+                        <a href="" title="Выйти из профиля"><img src="#" width="1" height="1" alt=""></a>
+                    </span>
+                    <span>
+                        <a href="" title="Посмотреть мои заказы">Мои заказы</a>
+                        <b>&bull;</b>
+                        <a href="" title="Войти в личный кабинет">Личный кабинет</a>
+                    </span>
+                </div>
+			</div>
+			<nav>
+                <ul>
+				    <li><a href="index.html">Главная</a></li>
+				    <li><a href="">Компания</a></li>
+				    <li><a href="catalog.html">Каталог</a></li>
+				    <li><a href="">Новости</a></li>
+				    <li><a href="">Спецпредложения</a></li>
+				    <li><a href="">Доставка</a></li>
+				    <li><a href="">Контакты</a></li>
+                </ul>
+			</nav>		
+		</header>
+        <main>
+            
+        </main>
+        <footer>
+            <div>
+                <a href="index.html" title="Главная">Техномарт</a>
+                <nav>
+                    <ul>
+    				    <li><a href="">Ком ния</a></li>
+    				    <li><a href="">Новости</a></li>
+                        <li><a href="catalog.html">Каталог</a></li>
+    				    <li><a href="">Доставка</a></li>
+	    			    <li><a href="">Контакты</a></li>
+                    </ul>
+    			</nav>
+                <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8<br>+7 (812) 555-05-55</p>
+                <ul>
+                    <li><a href="">Материалы</a></li>
+                    <li><a href="">Техника</a></li>
+                    <li><a href="">Инструмент</a></li>
+                    <li><a href="">Спецпредложения</a></li>
+                </ul>
+            </div>
+            <div>
+                <p>© 2010–2019 Компания «Техномарт»<br>Все права защищены</p>
+                <span>
+                    <a href="" title="Мы Вконтакте">Вконтакте</a>
+                    <a href="" title="Мы на Facebook">Фейсбук</a>
+                    <a href="" title="Мы в Instagram">Инстаграм</a>
+                </span>
+                <span>Обратная связь:<br><a href="mailto:mail@htmlacademy.ru" title="Написать нам">mail@htmlacademy.ru</a></span>
+                <span>Разработано -<br><a href="https://htmlacademy.ru/">htmlacademy.ru</a></span>
+            </div>
+        </footer>
+        
+    </body>
 </html>
