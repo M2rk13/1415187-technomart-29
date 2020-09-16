@@ -7,7 +7,7 @@
 	<body>
     <header>
       <div>
-        <a href="index.html" title="Главная"><img src="#" width="1" height="1" alt="Техномарт"></a>
+        <a href=""><img src="#" width="1" height="1" alt="Техномарт"></a>
         <input> <!-- форма поиска, на потом -->
         <!-- учитывая, что popup нет для "Закладки", "Корзина", "Оформить заказ", "Войти", "Регистрация" - считаем, что это ссылки на другие страницы, по ТЗ оставить пустыми -->
         <a href="" title="Отложенный товар">Закладки: <span>0</span></a>
@@ -37,9 +37,9 @@
             <a href="" title="Выйти из профиля">Выйти</a>
           </div>
           <div>
-            <a href="" title="Посмотреть мои заказы">Мои заказы</a>
+            <!-- ::before Мои заказы -->
             <b>&bull;</b>
-            <a href="" title="Войти в личный кабинет">Личный кабинет</a>
+            <!-- ::after Личный кабинет -->
           </div>
         </div>
       </div>
@@ -65,6 +65,7 @@
                 <h3>Дрели</h3>
                 <p>Соседям на радость!</p>
               </div>
+              <a href="catalog.html" title="Перейти в каталог">Открыть каталог</a>
               <!-- фоновая картинка -->
             </li>
             <li>
@@ -72,13 +73,13 @@
                 <h3>Перфораторы</h3>
                 <p>Настоящие мужские игрушки</p>
               </div>
+              <a href="catalog.html" title="Перейти в каталог">Открыть каталог</a>
               <!-- фоновая картинка -->
             </li>
           </ul>
           <div>
             <!-- стайдер: ?disabled? радиокнопки <input>-->
           </div>
-          <button type="button">Открыть каталог</button> <!-- Передается текущее положение, которое влияет на фильтр в каталоге, но это JavaScript || альтернатива - ссылки в слайдах на нужный фильтр -->
           <div>
             <!-- Круговое переключение -->
             <button type="button">Назад</button>
@@ -89,41 +90,37 @@
           <li>
             <a href="blank.html">
               <h3>Материалы</h3>
-              <span>new</span>
+              <!-- псевдо - new -->
               <p>на любой вкус</p>
-              <img src="#" width="1" height="1" alt="">
+              <!-- спрайт -->
             </a>
           </li>
           <li>
             <a href="blank.html">
               <h3>Инструмент</h3>
-              <span></span>
               <p>на все случаи</p>
-              <img src="#" width="1" height="1" alt="">
+              <!-- спрайт -->
             </a>
           </li>
           <li>
             <a href="blank.html">
               <h3>Техника</h3>
-              <span></span>
               <p>для стройки</p>
-              <img src="#" width="1" height="1" alt="">
+              <!-- спрайт -->
             </a>
           </li>
           <li>
             <a href="blank.html">
               <h3>Скидки 50%</h3>
-              <span></span>
               <p>на 350 товаров</p>
-              <img src="#" width="1" height="1" alt="">
+              <!-- спрайт -->
             </a>
           </li>
           <li>
             <a href="blank.html">
               <h3>Доставка</h3>
-              <span></span>
               <p>бесплатно</p>
-              <img src="#" width="1" height="1" alt="">
+              <!-- спрайт -->
             </a>
           </li>
         </ul>
@@ -133,7 +130,6 @@
         <a href="">Все популярные товары</a>
         <ul>
           <li>
-            <span></span>
             <img src="#" width="1" height="1" alt="Перфоратор BOSCH BFG 9000">
             <div> <!-- hover -->
               <button type="button"><img src="#" width="1" height="1" alt="">Купить</button>
@@ -144,7 +140,7 @@
             <button type="button">25500 Р.</button>
           </li>
           <li>
-            <span>new</span>
+            <!-- псевдо - new -->
             <img src="#" width="1" height="1" alt="Перфоратор BOSCH BFG 3000">
             <div> <!-- hover -->
               <button type="button"><img src="#" width="1" height="1" alt="">Купить</button>
@@ -165,7 +161,7 @@
             <button type="button">25500 Р.</button>
           </li>
           <li>
-            <span>new</span>
+            <!-- псевдо - new -->
             <img src="#" width="1" height="1" alt="Перфоратор BOSCH BFG 2000">
             <div> <!-- hover -->
               <button type="button"><img src="#" width="1" height="1" alt="">Купить</button>
@@ -282,7 +278,7 @@
           <li><a href="" title="Мы в Instagram">Инстаграм</a></li>
         </ul>
         <div>Обратная связь: <a href="mailto:mail@htmlacademy.ru" title="Написать нам">mail@htmlacademy.ru</a></div>
-        <div>Разработано - <a href="https://htmlacademy.ru/">htmlacademy.ru</a></div>
+        <div>Разработано - <a href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a></div>
       </div>
     </footer>
     <section>
