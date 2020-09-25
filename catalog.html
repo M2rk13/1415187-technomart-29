@@ -1,51 +1,50 @@
 <!doctype html>
-<html lang="ru">
+<html class="page" lang="ru">
   <head>
     <meta charset="utf-8">
     <title>ТЕХНОМАРТ - каталог</title>
   </head>
-  <body>
-    <header>
-      <div>
-        <a href="index.html" title="Главная"><img src="#" width="1" height="1" alt="Техномарт"></a>
-        <input> <!-- форма поиска, на потом -->
-        <!-- учитывая, что popup нет для "Закладки", "Корзина", "Оформить заказ", "Войти", "Регистрация" - считаем, что это ссылки на другие страницы, по ТЗ оставить пустыми -->
-        <a href="" title="Отложенный товар">Закладки: <span>0</span></a>
-        <a href="" title="Посмотреть корзину">Корзина: <span>10</span></a>
-        <a href="" title="Оформить заказ">Оформить заказ</a>
+  <body class="page-body">
+    <header class="main-header">
+      <div class="header-top-panel">
+        <a class="main-header-logo button" href="">
+          <img src="#" width="1" height="1" alt="Техномарт">
+        </a>
+        <input> <!-- форма поиска, на потом class="search-bar"-->
+        <a class="bookmarks-button" href="" title="Отложенный товар">Закладки: <span>0</span></a> <!-- добавление класса active, если >0 -->
+        <a class="cart-button" href="" title="Посмотреть корзину">Корзина: <span>0</span></a> <!-- добавление класса active, если >0 -->
+        <a class="checkout-button" href="" title="Оформить заказ">Оформить заказ</a>
       </div>
-      <div>
-        <p>Интернет-магазин<br>строительных материалов<br>и инструментов для ремонта</p>
-        <div>
-          <h1>Магазин Техномарт</h1><!-- hidden -->
-          <div>
+      <div class="header-content">
+        <h1>Магазин Техномарт</h1><!-- style="visibility: hidden" -->
+        <p class="header-content-section">Интернет-магазин<br>строительных материалов<br>и инструментов для ремонта</p>
+        <div class="header-content-section">
             <!-- ::before - спрайт -->
-            <a href="tel:+78125550555" title="позвонить нам">+7 (812) 555-05-55</a>
-            <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
-          </div>
+            <a class="header-tel" href="tel:+78125550555" title="позвонить нам">+7 (812) 555-05-55</a>
+            <p class="header-adress">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
         </div>
-        <div> <!-- display: none путем добавления/удаления класса через JS -->
+        <div class="header-content-section">
           <!-- ::before - спрайт -->
-          <a href="" title="Войти в профиль">Войти</a>
-          <a href="" title="Впервые у нас? Зарегистрируйтесь!">Регистрация</a>
+          <a clas="user-menu-button" href="" title="Войти в профиль">Войти</a>
+          <a class="user-menu-button" href="" title="Впервые у нас? Зарегистрируйтесь!">Регистрация</a>
         </div>
-        <div>
-          <div>
+        <div class="header-content-section"> <!-- display: none путем добавления/удаления класса через JS -->
+          <div class="user-menu-button">
             <!-- ::before - спрайт -->
             <a href="" title="Посмотреть профиль">Равшан Джамшутович</a>
             <!-- ::before - спрайт -->
             <a href="" title="Выйти из профиля">Выйти</a>
           </div>
-          <div>
+          <div class="user-menu-controls">
             <a href="" title="Посмотреть мои заказы">Мои заказы</a>
             <!-- псевдоэлемент, content: "&bull;" -->
             <a href="" title="Войти в личный кабинет">Личный кабинет</a>
           </div>
         </div>
       </div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Главная</a></li>
+      <nav class="main-navigation">
+        <ul class="header-site-navigation">
+          <li><a href="index.html">Главная</a></li> <!-- .header-site-navigation li -->
           <li><a href="">Компания</a></li>
           <li><a href="catalog.html">Каталог</a></li>
           <li><a href="">Новости</a></li>
@@ -55,8 +54,8 @@
         </ul>
       </nav>
     </header>
-    <main>
-      <ul>
+    <main class="center">
+      <ul class="breadcrumbs">
         <li><a href="index.html" title="На Главную"><img src="#" width="1" height="1" alt="домой"></a></li>
         <li><a href="catalog.html" title="Все товары">Каталог</a></li>
         <li><a href="" title="В раздел Инструменты">Инструменты</a></li>
@@ -192,11 +191,11 @@
         </ul>
       </section>
     </main>
-    <footer>
-      <div>
-        <a href="index.html" title="Главная"><img src="#" width="1" height="1" alt="Техномарт"></a>
-        <nav>
-          <ul>
+    <footer class="main-footer">
+      <div class="main-footer-content">
+        <a class="main-footer-logo button" href="index.html" title="Главная"><img src="#" width="1" height="1" alt="Техномарт"></a>
+        <nav class="main-footer-navigation">
+          <ul class="footer-site-navigation"> <!-- возможно получится сделать один класс на nav в header и footer -->
             <li><a href="">Компания</a></li>
             <li><a href="">Новости</a></li>
             <li><a href="catalog.html">Каталог</a></li>
@@ -204,24 +203,31 @@
             <li><a href="">Контакты</a></li>
           </ul>
         </nav>
-        <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8<br>+7 (812) 555-05-55</p>
-        <ul>
+        <p class="footer-contacts">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8<br>+7 (812) 555-05-55</p>
+        <ul class="secondary-footer-navigation">
           <li><a href="">Материалы</a></li>
           <li><a href="">Техника</a></li>
           <li><a href="">Инструмент</a></li>
           <li><a href="">Спецпредложения</a></li>
         </ul>
       </div>
-      <div>
-        <p>© 2010–2019 Компания «Техномарт»<br>Все права защищены</p>
-        <ul>
+      <div class="footer-bottom-panel">
+        <p class="copyright">© 2010–2019 Компания «Техномарт»<br>Все права защищены</p>
+        <ul class="social">
           <li><a href="" title="Мы Вконтакте">Вконтакте</a></li>
           <li><a href="" title="Мы на Facebook">Фейсбук</a></li>
           <li><a href="" title="Мы в Instagram">Инстаграм</a></li>
         </ul>
-        <p>Обратная связь: <a href="mailto:mail@htmlacademy.ru" title="Написать нам">mail@htmlacademy.ru</a></p>
-        <p>Разработано - <a href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a></p>
+        <p class="contact-us">Обратная связь: <a href="mailto:mail@htmlacademy.ru" title="Написать нам">mail@htmlacademy.ru</a></p>
+        <p classs="developer">Разработано - <a href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a></p>
       </div>
     </footer>
+    <section class="cart-popup">
+      <!-- иконка ::before -->
+      <h2>Товар добавлен в корзину!</h2>
+      <button class="button" type="button">Оформить заказ</button>
+      <button class="button" type="button">Продолжить покупки</button> <!-- действие - закрыть -->
+      <button class="close-button" type="button">Закрыть</button>
+    </section>
     </body>
 </html>
