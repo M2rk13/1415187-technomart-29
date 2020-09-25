@@ -1,51 +1,50 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html class="page" lang="ru">
   <head>
     <meta charset="utf-8">
     <title>ТЕХНОМАРТ - Главная</title>
   </head>
-	<body>
-    <header>
-      <div>
-        <a href=""><img src="#" width="1" height="1" alt="Техномарт"></a>
-        <input> <!-- форма поиска, на потом -->
-        <!-- учитывая, что popup нет для "Закладки", "Корзина", "Оформить заказ", "Войти", "Регистрация" - считаем, что это ссылки на другие страницы, по ТЗ оставить пустыми -->
-        <a href="" title="Отложенный товар">Закладки: <span>0</span></a>
-        <a href="" title="Посмотреть корзину">Корзина: <span>0</span></a>
-        <a href="" title="Оформить заказ">Оформить заказ</a>
+	<body class="page-body">
+    <header class="main-header">
+      <div class="header-top-panel">
+        <a class="main-header-logo button" href="">
+          <img src="#" width="1" height="1" alt="Техномарт">
+        </a>
+        <input> <!-- форма поиска, на потом class="search-bar"-->
+        <a class="bookmarks-button" href="" title="Отложенный товар">Закладки: <span>0</span></a> <!-- добавление класса active, если >0 -->
+        <a class="cart-button" href="" title="Посмотреть корзину">Корзина: <span>0</span></a> <!-- добавление класса active, если >0 -->
+        <a class="checkout-button" href="" title="Оформить заказ">Оформить заказ</a>
       </div>
-      <div>
-        <p>Интернет-магазин<br>строительных материалов<br>и инструментов для ремонта</p>
-        <div>
-          <h1>Магазин Техномарт</h1><!-- hidden -->
-          <div>
+      <div class="header-content">
+        <h1>Магазин Техномарт</h1><!-- style="visibility: hidden" -->
+        <p class="header-content-section">Интернет-магазин<br>строительных материалов<br>и инструментов для ремонта</p>
+        <div class="header-content-section">
             <!-- ::before - спрайт -->
-            <a href="tel:+78125550555" title="позвонить нам">+7 (812) 555-05-55</a>
-            <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
-          </div>
+            <a class="header-tel" href="tel:+78125550555" title="позвонить нам">+7 (812) 555-05-55</a>
+            <p class="header-adress">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
         </div>
-        <div>
+        <div class="header-content-section">
           <!-- ::before - спрайт -->
-          <a href="" title="Войти в профиль">Войти</a>
-          <a href="" title="Впервые у нас? Зарегистрируйтесь!">Регистрация</a>
+          <a clas="user-menu-button" href="" title="Войти в профиль">Войти</a>
+          <a class="user-menu-button" href="" title="Впервые у нас? Зарегистрируйтесь!">Регистрация</a>
         </div>
-        <div> <!-- display: none путем добавления/удаления класса через JS -->
-          <div>
+        <div class="header-content-section"> <!-- display: none путем добавления/удаления класса через JS -->
+          <div class="user-menu-button">
             <!-- ::before - спрайт -->
             <a href="" title="Посмотреть профиль">Имя Фамилия</a>
             <!-- ::before - спрайт -->
             <a href="" title="Выйти из профиля">Выйти</a>
           </div>
-          <div>
+          <div class="user-menu-controls">
             <a href="" title="Посмотреть мои заказы">Мои заказы</a>
             <!-- псевдоэлемент, content: "&bull;" -->
             <a href="" title="Войти в личный кабинет">Личный кабинет</a>
           </div>
         </div>
       </div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Главная</a></li>
+      <nav class="main-navigation">
+        <ul class="header-site-navigation">
+          <li><a href="index.html">Главная</a></li> <!-- .header-site-navigation li -->
           <li><a href="">Компания</a></li>
           <li><a href="catalog.html">Каталог</a></li>
           <li><a href="">Новости</a></li>
@@ -55,69 +54,69 @@
         </ul>
       </nav>
     </header>
-    <main>
-      <section>
+    <main class="center">
+      <section class="content-categories">
         <h2>Популярные разделы</h2> <!-- hidden -->
-        <section>
-          <ul>
-            <li>
-              <div>
+        <section class="content-slider">
+          <ul class="content-slider-list">
+            <li class="content-slider-item">
+              <div class="text-slider">
                 <h3>Дрели</h3>
                 <p>Соседям на радость!</p>
               </div>
-              <a href="catalog.html" title="Перейти в каталог">Открыть каталог</a>
+              <a class="button" href="catalog.html" title="Перейти в каталог">Открыть каталог</a>
               <!-- фоновая картинка -->
             </li>
-            <li>
-              <div>
+            <li class="content-slider-item">
+              <div class="text-slider">
                 <h3>Перфораторы</h3>
                 <p>Настоящие мужские игрушки</p>
               </div>
-              <a href="catalog.html" title="Перейти в каталог">Открыть каталог</a>
+              <a class="button" href="catalog.html" title="Перейти в каталог">Открыть каталог</a>
               <!-- фоновая картинка -->
             </li>
           </ul>
-          <div>
+          <div class="content-slider-strider">
             <!-- стайдер: ?disabled? радиокнопки <input>-->
           </div>
-          <div>
+          <div class="content-slider-navigation">
             <!-- Круговое переключение -->
             <button type="button">Назад</button>
             <button type="button">Вперед</button>
           </div>
         </section>
-        <ul>
-          <li>
-            <a href="blank.html">
+        <ul class="content-tile">
+          <li class="content-tile-item">
+            <a class="button" href="">
               <h3>Материалы</h3>
               <!-- псевдо - new -->
               <p>на любой вкус</p>
               <!-- спрайт -->
             </a>
           </li>
-          <li>
-            <a href="blank.html">
+          <li class="content-tile-item">
+            <a class="button" href="">
               <h3>Инструмент</h3>
               <p>на все случаи</p>
               <!-- спрайт -->
             </a>
           </li>
-          <li>
-            <a href="blank.html">
+          <li class="content-tile-item">
+            <a class="button" href="">
               <h3>Техника</h3>
               <p>для стройки</p>
               <!-- спрайт -->
             </a>
           </li>
-          <li>
-            <a href="blank.html">
+          <li class="content-tile-item">
+            <a class="button" href="">
               <h3>Скидки 50%</h3>
               <p>на 350 товаров</p>
               <!-- спрайт -->
             </a>
           </li>
-          <li>
-            <a href="blank.html">
+          <li class="content-tile-item">
+            <a class="button" href="">
               <h3>Доставка</h3>
               <p>бесплатно</p>
               <!-- спрайт -->
@@ -125,21 +124,23 @@
           </li>
         </ul>
       </section>
-      <section>
-        <h2>Популярные товары:</h2>
-        <a href="">Все популярные товары</a>
-        <ul>
-          <li>
+      <section class="popular-products">
+        <div class="popular-title">
+          <h2>Популярные товары:</h2>
+          <a class ="button" href="">Все популярные товары</a>
+        </div>
+        <ul class="catalog"> <!-- не забыть такой же класс на стр. каталога -->
+          <li class="card-product">
             <img src="#" width="1" height="1" alt="Перфоратор BOSCH BFG 9000">
-            <div> <!-- hover -->
-              <button type="button"><img src="#" width="1" height="1" alt="">Купить</button>
-              <button type="button">В закладки</button>
+            <div class="hover-action"> <!-- hover -->
+              <button class="button" type="button"><img src="#" width="1" height="1" alt="">Купить</button>
+              <button class="button" type="button">В закладки</button>
             </div>
             <h3>Перфоратор BOSCH BFG 9000"</h3>
             <del>32500 Р.</del>
             <button type="button">25500 Р.</button>
           </li>
-          <li>
+          <li class="card-product">
             <!-- псевдо - new -->
             <img src="#" width="1" height="1" alt="Перфоратор BOSCH BFG 3000">
             <div> <!-- hover -->
@@ -150,7 +151,7 @@
             <del>22500 Р.</del>
             <button type="button">15500 Р.</button>
           </li>
-          <li>
+          <li class="card-product">
             <img src="#" width="1" height="1" alt="Перфоратор BOSCH BFG 6000">
             <div> <!-- hover -->
               <button type="button"><img src="#" width="1" height="1" alt="">Купить</button>
@@ -160,7 +161,7 @@
             <del>30500 Р.</del>
             <button type="button">25500 Р.</button>
           </li>
-          <li>
+          <li class="card-product">
             <!-- псевдо - new -->
             <img src="#" width="1" height="1" alt="Перфоратор BOSCH BFG 2000">
             <div> <!-- hover -->
@@ -173,11 +174,13 @@
           </li>
         </ul>
       </section>
-      <section>
-        <h2>Популярные производители:</h2>
-        <a href="">Все производители</a>
-        <ul>
-          <li>
+      <section class="popular-brands">
+        <div class="popular-title">
+          <h2>Популярные производители:</h2>
+          <a href="">Все производители</a>
+        </div>
+        <ul class="brands-tile">
+          <li> <!-- .brands-tile li -->
             <a href="" title="Каталог техники BOSCH"><img src="#" width="1" height="1" alt="BOSCH"></a>
           </li>
           <li>
@@ -203,58 +206,58 @@
           </li>
         </ul>
       </section>
-      <section>
+      <section class="services">
         <h2>Сервисы</h2>
         <p>Хороший интернет-магазин отличается от плохого не только ценами!<br>Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</p>
-        <aside>
-          <ul>
+        <aside class="services-menu">
+          <ul class="services-list">
             <li><!-- радиокнопка-->Достака</li>
             <li><!-- радиокнопка-->Гарантия</li>
             <li><!-- радиокнопка-->Кредит</li>
           </ul>
         </aside>
-        <div>
+        <div class="services-item">
           <h3>Доставка</h3>
           <p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно!<br>Ведь мы неплохо заработаем, поднимая его на ваш этаж!</p>
           <img src="#" width="1" height="1" alt="">
         </div>
-        <div>
+        <div class="services-item">
           <h3>Гарантия</h3>
           <p>Если купленный у нас товар поломается или заискрит,<br>а также в случае пожара, спровоцированного его возгоранием,  вы всегда можете быть уверены в нашей гарантии. Мы обменяем сгоревший товар на новый.<br>Дом уж восстановите как-нибудь сами.</p>
           <img src="#" width="1" height="1" alt="">
         </div>
-        <div>
+        <div class="services-item">
           <h3>Кредит</h3>
           <p>Залезть в долговую яму стало проще!<br>Кредитные консультанты придут вам на помощью</p>
-          <button type="button">Отправить заявку</button> <!-- popup написать нам? -->
+          <button class="button" type="button">Отправить заявку</button> <!-- popup написать нам? -->
           <img src="#" width="1" height="1" alt="">
         </div>
       </section>
-      <section>
+      <section class="logistic-info">
         <h2>Компания "Техномарт"</h2>
         <p>Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта и строительства не оставит равнодушными любителей сэкономить на гастарбайтерах.</p>
         <p>Мы можем доставить ваш товар в самые отдаленные точки России!
 Техномарт работает со многими транспортными компаниями:
         </p>
-        <ul>
+        <ul class="logistic-list ">
           <li>Деловые линии</li>
           <li>Авторейдинг</li>
           <li>ЖелДорЭкспедиция</li>
         </ul>
-        <a href="catalog.html">Открыть каталог</a>
+        <a class="button" href="catalog.html">Открыть каталог</a>
       </section>
-      <section>
+      <section class="contacts-info">
         <h2>Контакты</h2>
         <p>Вы можете забрать товар сами, заехав в наш офис:</p>
         <button type="button"><img src="#" width="1" height="1" alt="схема проезда"></button> <!-- popup схема проезда -->
-        <a href="catalog.html">Открыть каталог</a>
+        <a class="button" href="catalog.html">Открыть каталог</a>
       </section>
     </main>
-    <footer>
-      <div>
-        <a href="index.html" title="Главная"><img src="#" width="1" height="1" alt="Техномарт"></a>
-        <nav>
-          <ul>
+    <footer class="footer">
+      <div class="main-footer">
+        <a class="main-footer-logo button" href="index.html" title="Главная"><img src="#" width="1" height="1" alt="Техномарт"></a>
+        <nav class="main-footer-navigation">
+          <ul class="footer-site-navigation"> <!-- возможно получится сделать один класс на nav в header и footer -->
             <li><a href="">Компания</a></li>
             <li><a href="">Новости</a></li>
             <li><a href="catalog.html">Каталог</a></li>
@@ -262,34 +265,34 @@
             <li><a href="">Контакты</a></li>
           </ul>
         </nav>
-        <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8<br>+7 (812) 555-05-55</p>
-        <ul>
+        <p class="footer-contacts">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8<br>+7 (812) 555-05-55</p>
+        <ul class="secondary-footer-navigation">
           <li><a href="">Материалы</a></li>
           <li><a href="">Техника</a></li>
           <li><a href="">Инструмент</a></li>
           <li><a href="">Спецпредложения</a></li>
         </ul>
       </div>
-      <div>
-        <p>© 2010–2019 Компания «Техномарт»<br>Все права защищены</p>
-        <ul>
+      <div class="secondary-footer">
+        <p class="copyright">© 2010–2019 Компания «Техномарт»<br>Все права защищены</p>
+        <ul class="social">
           <li><a href="" title="Мы Вконтакте">Вконтакте</a></li>
           <li><a href="" title="Мы на Facebook">Фейсбук</a></li>
           <li><a href="" title="Мы в Instagram">Инстаграм</a></li>
         </ul>
-        <div>Обратная связь: <a href="mailto:mail@htmlacademy.ru" title="Написать нам">mail@htmlacademy.ru</a></div>
-        <div>Разработано - <a href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a></div>
+        <p class="contact-us">Обратная связь: <a href="mailto:mail@htmlacademy.ru" title="Написать нам">mail@htmlacademy.ru</a></p>
+        <p classs="developer">Разработано - <a href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a></p>
       </div>
     </footer>
-    <section>
+    <section class="write-us-popup">
       <h2>Написать нам</h2> <!-- hidden -->
       <!-- Здесь будет форма заявки input, textarea, label, submit-->
-      <button type="button">Закрыть</button> <!-- font-size = 0 -->
+      <button class="close-button" type="button">Закрыть</button> <!-- font-size = 0 -->
     </section>
-    <section>
+    <section class="map-popup">
       <h2>Схема проезда</h2> <!-- hidden -->
       <img src="#" width="1" height="1" alt="Большая Конюшенная ул., 19">
-      <button type="button">Закрыть</button>
+      <button class="close-button" type="button">Закрыть</button>
     </section>
 	</body>
 </html>
