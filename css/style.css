@@ -1,0 +1,422 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Fonts */
+
+/* cuprum-regular - latin */
+@font-face {
+  font-family: 'Cuprum';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Cuprum Regular'), local('Cuprum-Regular'),
+       url('../fonts/cuprum.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/cuprum.woff') format('woff'), /* Modern Browsers */
+}
+/* cuprum-italic - latin */
+@font-face {
+  font-family: 'Cuprum';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Cuprum Italic'), local('Cuprum-Italic'),
+       url('../fonts/cuprumitalic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/cuprumitalic.woff') format('woff'), /* Modern Browsers */
+}
+/* cuprum-700 - latin */
+@font-face {
+  font-family: 'Cuprum';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Cuprum Bold'), local('Cuprum-Bold'),
+       url('../fonts/cuprumbold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/cuprumbold.woff') format('woff'), /* Modern Browsers */
+}
+/* cuprum-700italic - latin */
+@font-face {
+  font-family: 'Cuprum';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Cuprum Bold Italic'), local('Cuprum-BoldItalic'),
+       url('../fonts/cuprumbolditalic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/cuprumbolditalic.woff') format('woff'), /* Modern Browsers */
+}
+
+/* pt-sans-regular - latin */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Sans'), local('PTSans-Regular'),
+       url('../fonts/ptsans.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/ptsans.woff') format('woff'), /* Modern Browsers */
+}
+/* pt-sans-700 - latin */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('PT Sans Bold'), local('PTSans-Bold'),
+       url('../fonts/ptsansbold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/ptsansbold.woff') format('woff'), /* Modern Browsers */
+}
+
+/* Variables */
+
+:root {
+  
+  --sub-panel-color: #293449;
+  --main-panel-color: #32425C;
+  
+  --main-button-color: #EE3643;
+  --main-button-active-color: #BA2732;
+  --sub-button-color: #FF5357;
+  --sub-button-active-color: #161D29;
+  --extra-button-color: #63A63E;
+  --extra-button-hover-color: #5FBB2D;
+  --user-menu-active-button: #C5C5C5;
+  --sprite-basic-color: #3D546F;
+    
+  --main-text-color: #000;
+  --sub-text-color: #FFF;
+  --sub-text-active-color: rgba(255, 255, 255, 0.5);
+  --extra-text-color: #FFD180;
+  --deleted-text-color: #A9A9A9;
+ 
+  --header-background-color: #F3F7F8;
+  --title-background-color: #F2F6F8;
+  --content-background-color: #F9F5F0;
+  --background-color: #FFF;
+  --info-background-color: #F1F5F7;
+  --social-background-color: #212A3A;
+  }
+
+.page-body {
+  min-width: 940px;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  font-family: "Cuprum", Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--main-text-color);
+}
+
+.page-body a {
+  text-decoration: none;
+  color: var(--sub-text-color);
+}
+
+.page-body ul {
+  list-style: none;
+}
+
+/* header */
+
+.main-header {
+  background-color: var( --header-background-color);
+}
+
+.header-top-panel {
+  background-color: var(--sub-panel-color);
+  font-size: 18px;
+  line-height: 24px;
+}
+
+/* header-logo */
+
+.main-header-logo {
+  text-transform: uppercase;
+}
+
+.main-header-logo:active {
+  background-color: var(--main-button-active-color);
+}
+
+/* end header logo */
+
+.button {
+  background-color: var(--main-button-color);
+  color: var(--sub-text-color);
+  text-transform: uppercase;
+}
+
+/* здесь будут стили для формы поиска, когда дойду до форм */
+
+/* top panel buttons */
+
+.top-panel-button:active {
+  background-color: var(--sub-button-active-color);
+  color: var(--sub-text-active-color);
+}
+
+.top-panel-button::before {
+  color: var(--sub-text-color);
+  opacity: 0.3;
+}
+
+.top-panel-button:hover::before {
+  opacity: 1;
+}
+
+.checkout-button {
+  background-color: var(--extra-button-color);
+}
+
+.checkout-button:active {
+  color: var(--sub-text-active-color);
+}
+
+.checkout-button:hover {
+  background-color: var(--extra-button-hover-color);
+}
+
+/* end top panel buttons*/
+
+.header-content h1 {
+  display: none;
+}
+
+.header-slogan {
+  color: var(--main-button-color);
+  font-style: italic;
+  sont-size: 16px;
+  line-height: 23px;
+}
+
+.header-content-section .header-tel {
+  color: var(--main-button-color);
+  font-size: 21px;
+  line-height: 30px;
+  font-weight: 700;
+}
+
+.header-adress {
+  color: var(--main-panel-color);
+  font-size: 14px;
+  line-height: 24px;
+}
+
+/* user menu buttons */
+
+/* ПЕРЕСМОТРИ ЭТОТ РАЗДЕЛ!!!! */
+
+.user-menu-button {
+  background-color: var(--sub-text-color);
+}
+
+.user-menu-button a {
+  color: var(--main-text-color);
+  font-size: 21px;
+  line-height: 21px;
+}
+
+.user-menu-button a:hover {
+  color: var(--main-button-color);
+}
+
+.user-menu-button a:active {
+  color: var(--user-menu-active-button);
+}
+
+.logged-out-button a::before {
+  content: 'sprite';
+  color: var(--user-menu-active-button);
+}
+
+.logged-out-button a:hover::before {
+  content: 'sprite';
+  color: var(--sprite-basic-color);
+}
+
+.logged-out-button a:active::before {
+  content: 'sprite';
+  color: inherit;
+}
+
+.logged-in-button a {
+  content: 'sprite';
+}
+
+.logged-in-button a:hover::before {
+  content: 'sprite';
+  color: var(--sprite-basic-color);
+}
+
+.user-menu-controls a {
+  color: var(--main-panel-color);
+  font-size: 16px;
+  line-height: 18px;
+}
+
+/* end user menu buttons */
+
+.main-navigaton {
+}
+
+.header-site-navigation {
+  background-color: var(--main-panel-color);
+  font-size: 18px;
+  line-height: 24px;
+}
+
+/* content */
+
+.text-slider {
+  background-color: #999;
+  color: var(--sub-text-color);
+}
+
+.text-slider h3 {
+  font-size: 36px;
+  font-height: 36px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.text-slider p {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.slider-button {
+}
+
+/* это больше похоже уже на контент, чем на стиль сайта,
+поэтому цвета не в переменных */
+
+.content-tile-item:nth-child(4n+1) {
+  background-color: #FFC047;
+}
+
+.content-tile-item:nth-child(2) {
+  background-color: #3BBCE3;
+}
+.content-tile-item:nth-child(3) {
+  background-color: #DC91D8;
+}
+.content-tile-item:nth-child(4) {
+  background-color: #8ED78F;
+}
+
+.content-tile-item h3 {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
+}
+
+.content-tile-item p {
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.popular-title {
+  background-color: var(--content-background-color);
+  text-transform: uppercase;
+}
+
+.popular-title h2 {
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.popular-title a {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.card-product {
+  font-size: 17px;
+  line-height: 18px;
+}
+
+.card-product h3 {
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.price-button {
+  font-weight: 700;
+}
+
+.buy-button {
+  background-color: var(--extra-button-color);
+}
+
+.bookmark-button {
+  background-color: var(--background);
+  color: var(--main-text-color);
+}
+
+/* info */
+
+.services {
+  background-color: var(--info-background-color);
+  font-size: 13px;
+  line-height: 24px;
+}
+
+.services-list {
+  color: var(--sub-text-color);
+  background-color: var(--main-panel-color);
+  font-size: 21px;
+  line-hieght: 30px;
+}
+
+.services-list li:nth-child(1) {
+  background-color: var(--sub-text-color);
+  color: var(--main-panel-color);
+}
+
+.info-title {
+  font-size: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
+.info-paragraph {
+  font-size: 13px;
+  line-height: 24px;
+  font-family: "PT Sans", Arial, sans-serif;
+}
+
+.services-item h2 {
+  color: var(--main-panel-color);
+}
+
+.logistic-list {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+/* footer */
+
+.main-footer {
+  background-color: var(--main-panel-color);
+  color: var(--sub-text-color);
+}
+
+.main-footer-content {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.main-footer-logo {
+  text-transform: uppercase;
+}
+
+.secondary-footer-navigation a,
+.footer-bottom-panel a {
+  color: var(--extra-text-color);
+}
+
+.footer-bottom-panel {
+  background-color: var(--sub-panel-color);
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.social a {
+  background-color: var(--social-background-color);
+  color: var(--sub-text-color);
+}
