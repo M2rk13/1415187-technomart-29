@@ -68,10 +68,12 @@
   
   --main-button-color: #EE3643;
   --main-button-active-color: #BA2732;
+  --main-button-hover-color: #CA2C37;
   --sub-button-color: #FF5357;
   --sub-button-active-color: #161D29;
   --extra-button-color: #63A63E;
   --extra-button-hover-color: #5FBB2D;
+  --extra-button-active-color: #518534;
   --user-menu-active-button: #C5C5C5;
   --sprite-basic-color: #3D546F;
     
@@ -87,6 +89,7 @@
   --background-color: #FFF;
   --info-background-color: #F1F5F7;
   --social-background-color: #212A3A;
+  --navigation-active-background-color: #1D2739;
   }
 
 .page-body {
@@ -124,7 +127,7 @@
 /* header-logo */
 
 .main-header-logo {
-  text-transform: uppercase;
+  background-color: var(--main-button-color);
 }
 
 .main-header-logo:active {
@@ -133,15 +136,51 @@
 
 /* end header logo */
 
+/* buttons */
+
 .button {
-  background-color: var(--main-button-color);
   color: var(--sub-text-color);
   text-transform: uppercase;
 }
 
-/* здесь будут стили для формы поиска, когда дойду до форм */
+.catalog-button {
+  background-color: var(--main-button-color);
+}
 
-/* top panel buttons */
+.catalog-button:hover {
+  background-color: var(--main-button-hover-color);
+}
+
+.catalog-button:active {
+  background-color: var(--main-button-active-color);
+}
+
+.price-button {
+  background-color: var(--main-button-color);
+  font-weight: 700;
+}
+
+.buy-button {
+  background-color: var(--extra-button-color);
+}
+
+.buy-button:hover {
+  background-color: var(--extra-button-hover-color);
+}
+
+.buy-button:active {
+  background-color: var(--extra-button-active-color);
+}
+
+.bookmark-button {
+  background-color: var(--background);
+  color: var(--main-panel-color);
+}
+
+.bookmark-button:active {}
+.bookmark-button:hover {}
+
+/* здесь будут стили для формы поиска, когда дойду до форм */
 
 .top-panel-button:active {
   background-color: var(--sub-button-active-color);
@@ -169,7 +208,7 @@
   background-color: var(--extra-button-hover-color);
 }
 
-/* end top panel buttons*/
+/* end buttons*/
 
 .header-content h1 {
   display: none;
@@ -196,49 +235,55 @@
 }
 
 /* user menu buttons */
-
-/* ПЕРЕСМОТРИ ЭТОТ РАЗДЕЛ!!!! */
-
-.user-menu-button {
-  background-color: var(--sub-text-color);
-}
+/*______________________________*/
 
 .user-menu-button a {
   color: var(--main-text-color);
   font-size: 21px;
-  line-height: 21px;
+  line-height: 21px;  
 }
 
-.user-menu-button a:hover {
-  color: var(--main-button-color);
+.user-menu-button .log-out-button {
+  font-size: 12px; /* здесть будет 0 */
+}
+
+.logged-out-button:hover {
+  color: var(--main-button-color); 
+}
+
+.log-in-button::before {
+  content: 'sprte1';
+}
+
+.logged-in-button::before {
+  content: 'sprite2';
+}
+
+.log-out-button::before {
+  content: 'sprite3';
+}
+
+.log-in-button:hover::before,
+.logged-in-button:hover::before,
+.log-out-button:hover::before {
+  color: var(--sprite-basic-color);
+}
+
+.log-in-button::before,
+.log-in-button:active::before, 
+.logged-in-button::before,
+.logged-in-button:active::before, 
+.log-out-button::before,
+.log-out-button:active::before {
+  color: var(--user-menu-active-button);
+}
+
+.logged-in-button:active::before {
+  color: var(--user-menu-active-button);
 }
 
 .user-menu-button a:active {
-  color: var(--user-menu-active-button);
-}
-
-.logged-out-button a::before {
-  content: 'sprite';
-  color: var(--user-menu-active-button);
-}
-
-.logged-out-button a:hover::before {
-  content: 'sprite';
-  color: var(--sprite-basic-color);
-}
-
-.logged-out-button a:active::before {
-  content: 'sprite';
-  color: inherit;
-}
-
-.logged-in-button a {
-  content: 'sprite';
-}
-
-.logged-in-button a:hover::before {
-  content: 'sprite';
-  color: var(--sprite-basic-color);
+  color: var(--user-menu-active-button); 
 }
 
 .user-menu-controls a {
@@ -247,7 +292,29 @@
   line-height: 18px;
 }
 
+.user-menu-controls a:hover {
+	color: var(--main-button-color);
+}
+
+.user-menu-controls a:active {
+	color: var(--user-menu-active-button);
+}
+
+.user-menu-controls::before {
+	content: '\2022';
+}
+
+.user-menu-controls:hover::before {
+  color: var(--main-button-color);
+}
+
+.user-menu-controls:active::before {
+  color: var(--user-menu-active-button);
+}
+
 /* end user menu buttons */
+
+/* navigation buttons */
 
 .main-navigaton {
 }
@@ -258,7 +325,20 @@
   line-height: 24px;
 }
 
+.header-site-navigation a:hover {
+  background-color: var(--sub-panel-color);
+}
+
+.header-site-navigation a:active {
+  background-color: var(--navigation-active-background-color);
+  color: var(--sub-text-active-color);
+}
+
+/* end navigation buttons */
+
 /* content */
+
+/* slider + tile */
 
 .text-slider {
   background-color: #999;
@@ -283,7 +363,8 @@
 /* это больше похоже уже на контент, чем на стиль сайта,
 поэтому цвета не в переменных */
 
-.content-tile-item:nth-child(4n+1) {
+.content-tile-item:first-child,
+.content-tile-item:last-child {
   background-color: #FFC047;
 }
 
@@ -310,6 +391,38 @@
   background-color: rgba(255, 255, 255, 0.3);
 }
 
+
+/* в макете используется opacity, но это реально геморрой, проще rgba
+
+.tile-button {
+  min-height: 18px;
+  background-color: var(--background-color);
+  opacity: 0.3;
+  color: red;
+}
+
+.tile-button:hover {
+  background-color: var(--user-menu-active-button);
+}
+
+.tile-button:active {
+  background-color: var(--deleted-text-color);
+}
+
+*/
+
+.content-tile-item p:hover {
+  background-color: rgba(169, 169, 169, 0.3);
+}
+
+.content-tile-item p:active {
+  background-color: rgba(197, 197, 197, 0.3);
+}
+
+/* end slider + tile */
+
+/* main content */
+
 .popular-title {
   background-color: var(--content-background-color);
   text-transform: uppercase;
@@ -335,18 +448,13 @@
   line-height: 20px;
 }
 
-.price-button {
-  font-weight: 700;
+.brands-tile li:hover {}
+
+.brands-tile li:active {
+  opacity: 0.5;
 }
 
-.buy-button {
-  background-color: var(--extra-button-color);
-}
-
-.bookmark-button {
-  background-color: var(--background);
-  color: var(--main-text-color);
-}
+/* end main content */
 
 /* info */
 
@@ -363,9 +471,13 @@
   line-hieght: 30px;
 }
 
-.services-list li:nth-child(1) {
+.services-list .active { /* повышение специфичности селектора */
   background-color: var(--sub-text-color);
   color: var(--main-panel-color);
+}
+
+.service-item:hover {
+  background-color: var(--sub-panel-color);
 }
 
 .info-title {
@@ -389,6 +501,8 @@
   line-height: 24px;
 }
 
+/* end info */
+
 /* footer */
 
 .main-footer {
@@ -410,6 +524,18 @@
   color: var(--extra-text-color);
 }
 
+.main-footer a:hover {
+  text-decoration: underline;
+}
+
+.main-footer-content a:active {
+  opacity: 0.5;
+}
+
+.footer-bottom-panel a:active {
+  color: var(--main-button-color);
+}
+
 .footer-bottom-panel {
   background-color: var(--sub-panel-color);
   font-size: 16px;
@@ -420,3 +546,14 @@
   background-color: var(--social-background-color);
   color: var(--sub-text-color);
 }
+
+.social a:hover {
+  background-color: var(--main-button-color);
+}
+
+.social a:active {
+  background-color: var(--main-button-color);
+  color: var(--main-text-color);
+}
+
+/* end footer */

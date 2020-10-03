@@ -28,24 +28,24 @@
             <p class="header-adress">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
         </div>
         <div class="header-content-section">
-          <div class="user-menu-button logged-out-button" >
+          <div class="user-menu-button" >
             <!-- српайт -->
-            <a href="" title="Войти в профиль">Войти</a>
+            <a class="logged-out-button log-in-button" href="" title="Войти в профиль">Войти</a>
           </div>
           <div class="user-menu-button">
-            <a href="" title="Впервые у нас? Зарегистрируйтесь!">Регистрация</a>
+            <a class="logged-out-button" href="" title="Впервые у нас? Зарегистрируйтесь!">Регистрация</a>
           </div>
         </div>
         <div class="header-content-section"> <!-- display: none путем добавления/удаления через JS -->
-          <div class="user-menu-button logged-in-button">
+          <div class="user-menu-button">
             <!-- ::before - спрайт -->
-            <a href="" title="Посмотреть профиль">Имя Фамилия</a>
+            <a class="logged-in-button" href="" title="Посмотреть профиль">Имя Фамилия</a>
             <!-- ::before - спрайт -->
             <a class="log-out-button" href="" title="Выйти из профиля">Выйти</a> <!-- может это спрайт со своей ссылкой?? -->
           </div>
           <div class="user-menu-controls">
             <a href="" title="Посмотреть мои заказы">Мои заказы</a>
-            <!-- псевдоэлемент, content: "&bull;" -->
+            <!-- псевдоэлемент, content: '\2022' -->
             <a href="" title="Войти в личный кабинет">Личный кабинет</a>
           </div>
         </div>
@@ -72,7 +72,7 @@
                 <h3>Дрели</h3>
                 <p>Соседям на радость!</p>
               </div>
-              <a class="button" href="catalog.html" title="Перейти в каталог">Открыть каталог</a>
+              <a class="button catalog-button" href="catalog.html" title="Перейти в каталог">Открыть каталог</a>
               <!-- фоновая картинка -->
             </li>
             <li class="content-slider-item">
@@ -80,7 +80,7 @@
                 <h3>Перфораторы</h3>
                 <p>Настоящие мужские игрушки</p>
               </div>
-              <a class="button" href="catalog.html" title="Перейти в каталог">Открыть каталог</a>
+              <a class="button catalog-button" href="catalog.html" title="Перейти в каталог">Открыть каталог</a>
               <!-- фоновая картинка -->
             </li>
           </ul>
@@ -95,37 +95,42 @@
         </section>
         <ul class="content-tile">
           <li class="content-tile-item">
-            <a class="button" href="">
+            <a href="">
               <h3>Материалы</h3>
               <!-- псевдо - new -->
+              <div class="tile-button"></div>
               <p>на любой вкус</p>
               <!-- спрайт -->
             </a>
           </li>
           <li class="content-tile-item">
-            <a class="button" href="">
+            <a href="">
               <h3>Инструмент</h3>
+              <div class="tile-button"></div>
               <p>на все случаи</p>
               <!-- спрайт -->
             </a>
           </li>
           <li class="content-tile-item">
-            <a class="button" href="">
+            <a href="">
               <h3>Техника</h3>
+              <div class="tile-button"></div>
               <p>для стройки</p>
               <!-- спрайт -->
             </a>
           </li>
           <li class="content-tile-item">
-            <a class="button" href="">
+            <a href="">
               <h3>Скидки 50%</h3>
+              <div class="tile-button"></div>
               <p>на 350 товаров</p>
               <!-- спрайт -->
             </a>
           </li>
           <li class="content-tile-item">
-            <a class="button" href="">
+            <a href="">
               <h3>Доставка</h3>
+              <div class="tile-button"></div>
               <p>бесплатно</p>
               <!-- спрайт -->
             </a>
@@ -185,7 +190,7 @@
       <section class="popular-brands">
         <div class="popular-title">
           <h2>Популярные производители:</h2>
-          <a class="button" href="">Все производители</a>
+          <a class="button catalog-button" href="">Все производители</a>
         </div>
         <ul class="brands-tile">
           <li> <!-- .brands-tile li -->
@@ -219,9 +224,9 @@
         <p class="info-paragraph">Хороший интернет-магазин отличается от плохого не только ценами!<br>Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</p>
         <aside class="services-menu">
           <ul class="services-list">
-            <li><!-- радиокнопка-->Доставка</li> <!-- активная -->
-            <li><!-- радиокнопка-->Гарантия</li>
-            <li><!-- радиокнопка-->Кредит</li>
+            <li class="active servicve-item"><!-- радиокнопка-->Доставка</li> <!-- активная -->
+            <li class="service-item"><!-- радиокнопка-->Гарантия</li>
+            <li class="service-item"><!-- радиокнопка-->Кредит</li>
           </ul>
         </aside>
         <div class="services-item">
@@ -237,7 +242,7 @@
         <div class="services-item">
           <h2 class="info-title">Кредит</h2>
           <p class="info-paragraph">Залезть в долговую яму стало проще!<br>Кредитные консультанты придут вам на помощью</p>
-          <button class="button" type="button">Отправить заявку</button> <!-- popup написать нам? -->
+          <button class="button catalog-button" type="button">Отправить заявку</button> <!-- popup написать нам? -->
           <img src="#" width="1" height="1" alt="">
         </div>
       </section>
@@ -252,13 +257,13 @@
           <li>Авторейдинг</li>
           <li>ЖелДорЭкспедиция</li>
         </ul>
-        <a class="button" href="catalog.html">Открыть каталог</a>
+        <a class="button catalog-button" href="catalog.html">Открыть каталог</a>
       </section>
       <section class="contacts-info">
         <h2 class="info-title">Контакты</h2>
         <p class="info-paragraph">Вы можете забрать товар сами, заехав в наш офис:</p>
         <button type="button"><img src="#" width="1" height="1" alt="схема проезда"></button> <!-- popup схема проезда -->
-        <a class="button" href="catalog.html">Открыть каталог</a>
+        <a class="button catalog-button" href="catalog.html">Открыть каталог</a>
       </section>
     </main>
     <footer class="main-footer">
