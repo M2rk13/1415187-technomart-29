@@ -63,34 +63,45 @@
 
 :root {
   
-  --sub-panel-color: #293449;
-  --main-panel-color: #32425C;
+  --sub-panel-color: #293449; /* --dark-blue: */
+  --main-panel-color: #32425C; /* --basic-blue: */
   
-  --main-button-color: #EE3643;
-  --main-button-active-color: #BA2732;
-  --main-button-hover-color: #CA2C37;
-  --sub-button-color: #FF5357;
-  --sub-button-active-color: #161D29;
-  --extra-button-color: #63A63E;
-  --extra-button-hover-color: #5FBB2D;
-  --extra-button-active-color: #518534;
-  --user-menu-active-button: #C5C5C5;
-  --sprite-basic-color: #3D546F;
+  --main-button-color: #EE3643; /* --basic-red: */
+  --main-button-active-color: #BA2732; /* --darken-red: */
+  --main-button-hover-color: #CA2C37; /* --dark-red: */
+  --sub-button-color: #FF5357; /* --light-red: */
+  --sub-button-active-color: #161D29; /* --darken-blue: */
+  --extra-button-color: #63A63E; /* --basic-green: */
+  --extra-button-hover-color: #5FBB2D; /* --light-green: */
+  --extra-button-active-color: #518534; /* --dark-green: */
+  --user-menu-active-button: #C5C5C5; /* --basic-gray: */
+  --sprite-basic-color: #3D546F; /* --light-blue: */
+  
+  --tile-button-color: rgba(255, 255, 255, 0.3); /* --transparent-white: */
+  --tile-button-hover-color: rgba(169, 169, 169, 0.3); /* --transparent-gray: */
+  --tile-button-active-color: rgba(197, 197, 197, 0.3); /* --transparent-dark-gray: */
+  
     
-  --main-text-color: #000;
-  --sub-text-color: #FFF;
-  --sub-text-active-color: rgba(255, 255, 255, 0.5);
-  --extra-text-color: #FFD180;
-  --deleted-text-color: #A9A9A9;
+  --main-text-color: #000; /* --black: */
+  --sub-text-color: #FFF; /* --white: */
+  --sub-text-active-color: rgba(255, 255, 255, 0.5); /* --very-transparent-white: */
+  --extra-text-color: #FFD180; /* --basic-yellow: */
+  --deleted-text-color: #A9A9A9; /* --light-gray: */
  
-  --header-background-color: #F3F7F8;
-  --title-background-color: #F2F6F8;
-  --content-background-color: #F9F5F0;
-  --background-color: #FFF;
-  --info-background-color: #F1F5F7;
-  --social-background-color: #212A3A;
-  --navigation-active-background-color: #1D2739;
-  }
+  --header-background-color: #F3F7F8; /* --basic-off-white: */
+  --title-background-color: #F2F6F8; /* --dark-off-white: */
+  --content-background-color: #F9F5F0; /* --light-off-white: */
+  --background-color: #FFF; /* повтор */
+  --info-background-color: #F1F5F7; /* --darken-off-white*/
+  --social-background-color: #212A3A; /* --darken-blue: */
+  --navigation-active-background-color: #1D2739; /* --darkest-blue: */
+  --slider-background-color: #999; /* --darkest-gray: */
+  --content-tile-orange: #FFC047;
+  --content-tile-blue: #3BBCE3;
+  --content-tile-pink: #DC91D8;
+  --content-tile-green: #8ED78F;
+  
+}
 
 .page-body {
   min-width: 940px;
@@ -158,6 +169,8 @@
 .price-button {
   background-color: var(--main-button-color);
   font-weight: 700;
+  border: none;
+  outline: none;
 }
 
 .buy-button {
@@ -175,10 +188,16 @@
 .bookmark-button {
   background-color: var(--background);
   color: var(--main-panel-color);
+  border: 3px solid var(--extra-button-color);
+  border-radius: 2px;
 }
 
-.bookmark-button:active {}
-.bookmark-button:hover {}
+.bookmark-button:active {
+  opacity: 0.5;
+}
+.bookmark-button:hover {
+  border-color: var(--main-panel-color);
+}
 
 /* здесь будут стили для формы поиска, когда дойду до форм */
 
@@ -341,7 +360,7 @@
 /* slider + tile */
 
 .text-slider {
-  background-color: #999;
+  background-color: var(--slider-background-color);
   color: var(--sub-text-color);
 }
 
@@ -360,22 +379,19 @@
 .slider-button {
 }
 
-/* это больше похоже уже на контент, чем на стиль сайта,
-поэтому цвета не в переменных */
-
 .content-tile-item:first-child,
 .content-tile-item:last-child {
-  background-color: #FFC047;
+  background-color: var(--content-tile-orange);
 }
 
 .content-tile-item:nth-child(2) {
-  background-color: #3BBCE3;
+  background-color: var(--content-tile-blue);
 }
 .content-tile-item:nth-child(3) {
-  background-color: #DC91D8;
+  background-color: var(--content-tile-pink);
 }
 .content-tile-item:nth-child(4) {
-  background-color: #8ED78F;
+  background-color: var(--content-tile-green);
 }
 
 .content-tile-item h3 {
@@ -388,35 +404,15 @@
   font-size: 14px;
   line-height: 18px;
   text-transform: uppercase;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: var(--tile-button-color);
 }
-
-
-/* в макете используется opacity, но это реально геморрой, проще rgba
-
-.tile-button {
-  min-height: 18px;
-  background-color: var(--background-color);
-  opacity: 0.3;
-  color: red;
-}
-
-.tile-button:hover {
-  background-color: var(--user-menu-active-button);
-}
-
-.tile-button:active {
-  background-color: var(--deleted-text-color);
-}
-
-*/
 
 .content-tile-item p:hover {
-  background-color: rgba(169, 169, 169, 0.3);
+  background-color: var(--tile-button-hover-color);
 }
 
 .content-tile-item p:active {
-  background-color: rgba(197, 197, 197, 0.3);
+  background-color: var(--tile-button-active-color);
 }
 
 /* end slider + tile */
