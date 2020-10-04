@@ -138,6 +138,7 @@
   background-color: var(--sub-panel-color);
   font-size: 18px;
   line-height: 24px;
+  min-height: 42px;
 }
 
 /* header-logo */
@@ -169,10 +170,6 @@
 
 .catalog-button:hover {
   background-color: var(--main-button-hover-color);
-}
-
-.catalog-button:active {
-  background-color: var(--main-button-active-color);
 }
 
 .price-button {
@@ -208,6 +205,10 @@
 
 /* здесь будут стили для формы поиска, когда дойду до форм */
 
+.look-bookmarks::before {
+  background-image: url("../img/icon-bookmark.svg");
+}
+
 .top-panel-button:active {
   background-color: var(--sub-button-active-color);
   color: var(--sub-text-active-color);
@@ -232,6 +233,10 @@
 
 .checkout-button:hover {
   background-color: var(--extra-button-hover-color);
+}
+
+.catalog-button:active {
+  background-color: var(--main-button-active-color);
 }
 
 /* end buttons*/
@@ -651,6 +656,10 @@
   text-decoration: underline;
 }
 
+.main-footer a:active {
+  text-decoration: none;
+}
+
 .main-footer-content a:active {
   opacity: 0.5;
 }
@@ -681,7 +690,7 @@
 
 /* end footer */
 
-/* наработки по фильтрам, временно */
+/* временные наработки, подлежат оптимизации во время код-ревью (перед защитой) */
 
 .filter-form {
   font-size: 15px;
@@ -693,4 +702,23 @@
   font-size: 17px;
   line-height: 30px;
   font-weight: 700;
+}
+
+
+/* в будущем проще ставить #цвет, (но создавать при этом переменную --цвет: #цвет,)а потом поиском с заменой вставлять нужную переменную, уже сейчас ощущаю, что это было бы быстрее */
+
+.about-category {
+  background-color: var(--info-background-color);
+}
+
+.about-category h2 {
+  font-size: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
+.about-category p {
+  font-size: 13px;
+  line-height: 24px;
+  font-family: "PT Sans", Arial, sans-serif;
 }
