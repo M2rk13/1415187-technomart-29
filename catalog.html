@@ -80,19 +80,58 @@
           <button class="active arrow" type="button">По убыванию</button>
           <button class="arrow" type="button">По возврастанию</button>
         </div>
-        <div>
+        <div class="price-filter">
           <h2>Цена:</h2>
-          <!-- ползунок -->
+          <!-- ползунки-диапазон, делается на JS -->
           <!-- две формы -->
         </div>
-        <div>
+        <fieldset class="filter-form">
+          <legend>Производители:</legend>
+          <ul>
+            <li>
+              <input type="checkbox" name="bosch" id="bosch" checked>
+              <label for="bosch">Bosch</label>
+            </li>
+            <li>
+              <input type="checkbox" name="interscol" id="interscol">
+              <label for="interscol">Интерскол</label>
+            </li>
+            <li>
+              <input type="checkbox" name="makita" id="makita" checked>
+              <label for="makita">Makita</label>
+            </li>
+            <li>
+              <input type="checkbox" name="dewalt" id="dewalt">
+              <label for="dewalt">Dewalt</label>
+            </li>
+            <li>
+              <input type="checkbox" name="hitachi" id="hitachi">
+              <label for="hitachi">Hitachi</label>
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset class="filter-form">
+          <legend>Питание:</legend>
+          <ul>
+            <li>
+              <input type="radio" name="power" value="accu" id="accu" checked>
+              <label for="accu">Аккумуляторные</label>
+            </li>
+            <li>
+              <input type="radio" name="power" value="plug" id="plug">
+              <label for="plug">Сетевые</label>
+            </li>
+          </ul>
+        </fieldset>
+        <!--
+        <div class="brands-filter">
           <h2>Производители:</h2>
-          <!-- чекбоксы -->
+
         </div>
-        <div>
+        <div class="power-filter">
           <h2>Питание:</h2>
-          <!-- радикнопки -->
         </div>
+        -->
         <button class="button catalog-page-button" type="submit">Показать</button>
       </aside>
       <section>

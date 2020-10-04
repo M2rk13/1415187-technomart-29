@@ -678,4 +678,19 @@
   background-color: var(--main-button-color);
   color: var(--main-text-color);
 }
+
 /* end footer */
+
+/* наработки по фильтрам, временно */
+
+.filter-form {
+  font-size: 15px;
+  line-height: 19px;
+  text-transform: uppercase;
+}
+
+.filter-form legend {
+  font-size: 17px;
+  line-height: 30px;
+  font-weight: 700;
+}
