@@ -3,41 +3,49 @@
   <head>
     <meta charset="utf-8">
     <title>ТЕХНОМАРТ - каталог</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cuprum:wght@400;700&display=swap" rel="stylesheet">
   </head>
   <body class="page-body">
     <header class="main-header">
       <div class="header-top-panel">
-        <a class="main-header-logo button" href="">
+        <a class="main-header-logo button" href="index.html">
           <img src="#" width="1" height="1" alt="Техномарт">
         </a>
         <input> <!-- форма поиска, на потом class="search-bar"-->
-        <a class="bookmarks-button" href="" title="Отложенный товар">Закладки: <span>0</span></a> <!-- добавление класса active, если >0 -->
-        <a class="cart-button" href="" title="Посмотреть корзину">Корзина: <span>0</span></a> <!-- добавление класса active, если >0 -->
+        <a class="top-panel-button" href="" title="Отложенный товар">Закладки: <span>0</span></a> <!-- добавление класса active, если >0 -->
+        <a class="top-panel-button catalog-button" href="" title="Посмотреть корзину">Корзина: <span>10</span></a> <!-- добавление класса active, если >0 -->
         <a class="checkout-button" href="" title="Оформить заказ">Оформить заказ</a>
       </div>
       <div class="header-content">
-        <h1>Магазин Техномарт</h1><!-- style="visibility: hidden" -->
-        <p class="header-content-section">Интернет-магазин<br>строительных материалов<br>и инструментов для ремонта</p>
+        <h1>Магазин Техномарт</h1>
+        <p class="header-content-section header-slogan">Интернет-магазин<br>строительных материалов<br>и инструментов для ремонта</p>
         <div class="header-content-section">
             <!-- ::before - спрайт -->
             <a class="header-tel" href="tel:+78125550555" title="позвонить нам">+7 (812) 555-05-55</a>
             <p class="header-adress">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
         </div>
-        <div class="header-content-section">
-          <!-- ::before - спрайт -->
-          <a clas="user-menu-button" href="" title="Войти в профиль">Войти</a>
-          <a class="user-menu-button" href="" title="Впервые у нас? Зарегистрируйтесь!">Регистрация</a>
+        <div class="header-content-section" style="display: none">
+          <div class="user-menu-button" >
+            <!-- српайт -->
+            <a class="logged-out-button log-in-button" href="" title="Войти в профиль">Войти</a>
+          </div>
+          <div class="user-menu-button">
+            <a class="logged-out-button" href="" title="Впервые у нас? Зарегистрируйтесь!">Регистрация</a>
+          </div>
         </div>
-        <div class="header-content-section"> <!-- display: none путем добавления/удаления класса через JS -->
+        <div class="header-content-section">
           <div class="user-menu-button">
             <!-- ::before - спрайт -->
-            <a href="" title="Посмотреть профиль">Равшан Джамшутович</a>
+            <a class="logged-in-button" href="" title="Посмотреть профиль">Равшан Джамшутович</a>
             <!-- ::before - спрайт -->
-            <a href="" title="Выйти из профиля">Выйти</a>
+            <a class="log-out-button" href="" title="Выйти из профиля">Выйти</a> <!-- может это спрайт со своей ссылкой?? -->
           </div>
           <div class="user-menu-controls">
             <a href="" title="Посмотреть мои заказы">Мои заказы</a>
-            <!-- псевдоэлемент, content: "&bull;" -->
+            <!-- псевдоэлемент, content: '\2022' -->
             <a href="" title="Войти в личный кабинет">Личный кабинет</a>
           </div>
         </div>
@@ -61,134 +69,181 @@
         <li><a href="" title="В раздел Инструменты">Инструменты</a></li>
         <li><a href="" title="В категорию Перфораторы">Перфораторы</a></li>
       </ul>
-      <h1>Перфораторы</h1>
-      <aside>
+      <h1 class="category-title">Перфораторы</h1>
+      <aside class="catalog-filter">
         <h3>Фильтр:</h3>
-        <div>
+        <div class="sorting-controls">
+          <h3>Сортировка:</h3> <!-- разберу позже, может это радиокнопки? -->
+          <button class="active" type="button">По цене</button>
+          <button type="button">По типу</button>
+          <button type="button">По функционалу</button>
+          <button class="active arrow" type="button">По убыванию</button>
+          <button class="arrow" type="button">По возврастанию</button>
+        </div>
+        <div class="price-filter">
           <h2>Цена:</h2>
-          <!-- ползунок -->
+          <!-- ползунки-диапазон, делается на JS -->
           <!-- две формы -->
         </div>
-        <div>
+        <fieldset class="filter-form">
+          <legend>Производители:</legend>
+          <ul>
+            <li>
+              <input type="checkbox" name="bosch" id="bosch" checked>
+              <label for="bosch">Bosch</label>
+            </li>
+            <li>
+              <input type="checkbox" name="interscol" id="interscol">
+              <label for="interscol">Интерскол</label>
+            </li>
+            <li>
+              <input type="checkbox" name="makita" id="makita" checked>
+              <label for="makita">Makita</label>
+            </li>
+            <li>
+              <input type="checkbox" name="dewalt" id="dewalt">
+              <label for="dewalt">Dewalt</label>
+            </li>
+            <li>
+              <input type="checkbox" name="hitachi" id="hitachi">
+              <label for="hitachi">Hitachi</label>
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset class="filter-form">
+          <legend>Питание:</legend>
+          <ul>
+            <li>
+              <input type="radio" name="power" value="accu" id="accu" checked>
+              <label for="accu">Аккумуляторные</label>
+            </li>
+            <li>
+              <input type="radio" name="power" value="plug" id="plug">
+              <label for="plug">Сетевые</label>
+            </li>
+          </ul>
+        </fieldset>
+        <!--
+        <div class="brands-filter">
           <h2>Производители:</h2>
-          <!-- чекбоксы -->
+
         </div>
-        <div>
+        <div class="power-filter">
           <h2>Питание:</h2>
-          <!-- радикнопки -->
         </div>
-        <button type="submit">Показать</button>
+        -->
+        <button class="button catalog-page-button" type="submit">Показать</button>
       </aside>
       <section>
-        <h2>Каталог товаров</h2> <!-- hidden -->
-        <div>
-          <span>Сортировка:</span>
-          <!-- управление сортировкой -->
-        </div>
-        <ul> <!-- поскольку количество товаров может быть любым - возможно уместно испоьзовать флексы -->
-          <li>
+        <h2 style="display: none">Каталог товаров</h2> <!-- hidden -->
+        <ul class="catalog"> <!-- поскольку количество товаров может быть любым - возможно уместно испоьзовать флексы -->
+          <li class="card-product">
             <img src="#" width="1" height="1" alt="Перфоратор BOSCH BFG 6000">
-            <div> <!-- hover -->
-              <button type="button"><img src="#" width="1" height="1" alt="">Купить</button>
-              <button type="button">В закладки</button>
+            <div class="product-action"> <!-- hover -->
+              <button class="button buy-button" type="button"><img src="#" width="1" height="1" alt="">Купить</button>
+              <button class="button bookmark-button" type="button">В закладки</button>
             </div>
             <h3>Перфоратор BOSCH BFG 6000"</h3>
             <del>30500 Р.</del>
-            <button type="button">25500 Р.</button>
+            <button class="button price-button" type="button">25500 Р.</button>
           </li>
-          <li>
+          <li class="card-product">
             <img src="#" width="1" height="1" alt="Перфоратор BOSCH BFG 6000">
-            <div> <!-- hover -->
-              <button type="button"><img src="#" width="1" height="1" alt="">Купить</button>
-              <button type="button">В закладки</button>
+            <div class="product-action"> <!-- hover -->
+              <button class="button buy-button" type="button"><img src="#" width="1" height="1" alt="">Купить</button>
+              <button class="button bookmark-button" type="button">В закладки</button>
             </div>
             <h3>Перфоратор BOSCH BFG 6000"</h3>
             <del>30500 Р.</del>
-            <button type="button">25500 Р.</button>
+            <button class="button price-button" type="button">25500 Р.</button>
           </li>
-          <li>
+          <li class="card-product">
             <!-- псевдо - new -->
             <img src="#" width="1" height="1" alt="Перфоратор BOSCH BFG 6000">
-            <div> <!-- hover -->
-              <button type="button"><img src="#" width="1" height="1" alt="">Купить</button>
-              <button type="button">В закладки</button>
+            <div class="product-action"> <!-- hover -->
+              <button class="button buy-button" type="button"><img src="#" width="1" height="1" alt="">Купить</button>
+              <button class="button bookmark-button" type="button">В закладки</button>
             </div>
             <h3>Перфоратор BOSCH BFG 6000"</h3>
             <del>30500 Р.</del>
-            <button type="button">25500 Р.</button>
+            <button class="button price-button" type="button">25500 Р.</button>
           </li>
-          <li>
+          <li class="card-product">
             <!-- псевдо - new -->
             <img src="#" width="1" height="1" alt="Перфоратор BOSCH BFG 3000">
-            <div> <!-- hover -->
-              <button type="button"><img src="#" width="1" height="1" alt="">Купить</button>
-              <button type="button">В закладки</button>
+            <div class="product-action"> <!-- hover -->
+              <button class="button buy-button" type="button"><img src="#" width="1" height="1" alt="">Купить</button>
+              <button class="button bookmark-button" type="button">В закладки</button>
             </div>
             <h3>Перфоратор BOSCH BFG 3000"</h3>
             <del>22500 Р.</del>
-            <button type="button">15500 Р.</button>
+            <button class="button price-button" type="button">15500 Р.</button>
           </li>
-          <li>
+          <li class="card-product">
             <img src="#" width="1" height="1" alt="Перфоратор BOSCH BFG 6000">
-            <div> <!-- hover -->
-              <button type="button"><img src="#" width="1" height="1" alt="">Купить</button>
-              <button type="button">В закладки</button>
+            <div class="product-action"> <!-- hover -->
+              <button class="button buy-button" type="button"><img src="#" width="1" height="1" alt="">Купить</button>
+              <button class="button bookmark-button" type="button">В закладки</button>
             </div>
             <h3>Перфоратор BOSCH BFG 6000"</h3>
             <del>30500 Р.</del>
-            <button type="button">25500 Р.</button>
+            <button class="button price-button" type="button">25500 Р.</button>
           </li>
-          <li>
+          <li class="card-product">
             <!-- псевдо - new -->
             <img src="#" width="1" height="1" alt="Перфоратор BOSCH BFG 2000">
-            <div> <!-- hover -->
-              <button type="button"><img src="#" width="1" height="1" alt="">Купить</button>
-              <button type="button">В закладки</button>
+            <div class="product-action"> <!-- hover -->
+              <button class="button buy-button" type="button"><img src="#" width="1" height="1" alt="">Купить</button>
+              <button class="button bookmark-button" type="button">В закладки</button>
             </div>
             <h3>Перфоратор BOSCH BFG 2000"</h3>
             <del></del>
-            <button type="button">12500 Р.</button>
+            <button class="button price-button" type="button">12500 Р.</button>
           </li>
-          <li>
+          <li class="card-product">
             <!-- псевдо - new -->
             <img src="#" width="1" height="1" alt="Перфоратор BOSCH BFG 3000">
-            <div> <!-- hover -->
-              <button type="button"><img src="#" width="1" height="1" alt="">Купить</button>
-              <button type="button">В закладки</button>
+            <div class="product-action"> <!-- hover -->
+              <button class="button buy-button" type="button"><img src="#" width="1" height="1" alt="">Купить</button>
+              <button class="button bookmark-button" type="button">В закладки</button>
             </div>
             <h3>Перфоратор BOSCH BFG 3000"</h3>
             <del>22500 Р.</del>
-            <button type="button">15500 Р.</button>
+            <button class="button price-button" type="button">15500 Р.</button>
           </li>
-          <li>
+          <li class="card-product">
             <img src="#" width="1" height="1" alt="Перфоратор BOSCH BFG 6000">
-            <div> <!-- hover -->
-              <button type="button"><img src="#" width="1" height="1" alt="">Купить</button>
-              <button type="button">В закладки</button>
+            <div class="product-action"> <!-- hover -->
+              <button class="button buy-button" type="button"><img src="#" width="1" height="1" alt="">Купить</button>
+              <button class="button bookmark-button" type="button">В закладки</button>
             </div>
             <h3>Перфоратор BOSCH BFG 6000"</h3>
             <del>30500 Р.</del>
-            <button type="button">25500 Р.</button>
+            <button class="button price-button" type="button">25500 Р.</button>
           </li>
-          <li>
+          <li class="card-product">
             <!-- псевдо - new -->
             <img src="#" width="1" height="1" alt="Перфоратор BOSCH BFG 2000">
-            <div> <!-- hover -->
-              <button type="button"><img src="#" width="1" height="1" alt="">Купить</button>
-              <button type="button">В закладки</button>
+            <div class="product-action"> <!-- hover -->
+              <button class="button buy-button" type="button"><img src="#" width="1" height="1" alt="">Купить</button>
+              <button class="button bookmark-button" type="button">В закладки</button>
             </div>
             <h3>Перфоратор BOSCH BFG 2000"</h3>
             <del></del>
-            <button type="button">12500 Р.</button>
+            <button class="button price-button"  type="button">12500 Р.</button>
           </li>
         </ul>
-        <ul>
-          <li><button type="button">Предыдущая</button></li> <!-- display: none -->
-          <li><a href="">1</a></li>
-          <li><a href="">2</a></li>
-          <li><a href="">3</a></li>
-          <li><button type="button">Следующая</button></li>          
+        <ul class="page-navigation">
+          <li style="display: none"><button class="catalog-page-button page-prev-button" type="button">Предыдущая</button></li> <!-- display: none -->
+          <li><a class="catalog-page-button active" href="">1</a></li>
+          <li><a class="catalog-page-button" href="">2</a></li>
+          <li><a class="catalog-page-button" href="">3</a></li>
+          <li><button class="catalog-page-button page-next-button" type="button">Следующая</button></li>          
         </ul>
+      </section>
+      <section class="about-category">
+        <h2>Пара слов о перфораторах</h2>
+        <p>Перфоратор — универсальный строительный инструмент. Предназначен для сверления и долбления отверстий в кирпиче, бетоне и камне. Существуют электромеханические и пневматические перфораторы. Современные модели могут выполнять функции дрели, шуруповерта и отбойного молотка.<br>В ассортиментном ряду есть выбор «трехрежимников»: в одном устройстве будут совмещены отбойный молоток и ударная дрель.</p>
       </section>
     </main>
     <footer class="main-footer">
@@ -222,11 +277,13 @@
         <p classs="developer">Разработано - <a href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a></p>
       </div>
     </footer>
-    <section class="cart-popup">
+    <section class="cart-popup" style="visibility: hidden">
       <!-- иконка ::before -->
       <h2>Товар добавлен в корзину!</h2>
-      <button class="button" type="button">Оформить заказ</button>
-      <button class="button" type="button">Продолжить покупки</button> <!-- действие - закрыть -->
+      <div>
+        <button class="button checkout-button" type="button">Оформить заказ</button>
+        <button class="button resume-button" type="button">Продолжить покупки</button> <!-- действие - закрыть -->
+      </div>
       <button class="close-button" type="button">Закрыть</button>
     </section>
     </body>

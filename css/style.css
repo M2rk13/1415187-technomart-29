@@ -83,6 +83,7 @@
   
     
   --main-text-color: #000; /* --black: */
+  --disabled-main-text-color: rgba(0, 0, 0, 0.3);
   --sub-text-color: #FFF; /* --white: */
   --sub-text-active-color: rgba(255, 255, 255, 0.5); /* --very-transparent-white: */
   --extra-text-color: #FFD180; /* --basic-yellow: */
@@ -95,12 +96,16 @@
   --info-background-color: #F1F5F7; /* --darken-off-white*/
   --social-background-color: #212A3A; /* --darken-blue: */
   --navigation-active-background-color: #1D2739; /* --darkest-blue: */
+  --catalog-filter-backgroun-color: #F7F3EC;
   --slider-background-color: #999; /* --darkest-gray: */
+  --popup-background-color: #F1F1F1;
+  
   --content-tile-orange: #FFC047;
   --content-tile-blue: #3BBCE3;
   --content-tile-pink: #DC91D8;
   --content-tile-green: #8ED78F;
   
+  --filter-button-border-color: #E5E5E5;
 }
 
 .page-body {
@@ -133,12 +138,14 @@
   background-color: var(--sub-panel-color);
   font-size: 18px;
   line-height: 24px;
+  min-height: 42px;
 }
 
 /* header-logo */
 
 .main-header-logo {
   background-color: var(--main-button-color);
+  border-radius: 0;
 }
 
 .main-header-logo:active {
@@ -152,6 +159,9 @@
 .button {
   color: var(--sub-text-color);
   text-transform: uppercase;
+  outline: none;
+  border: none;
+  border-radius: 2px;
 }
 
 .catalog-button {
@@ -162,15 +172,10 @@
   background-color: var(--main-button-hover-color);
 }
 
-.catalog-button:active {
-  background-color: var(--main-button-active-color);
-}
-
 .price-button {
   background-color: var(--main-button-color);
   font-weight: 700;
   border: none;
-  outline: none;
 }
 
 .buy-button {
@@ -189,7 +194,6 @@
   background-color: var(--background);
   color: var(--main-panel-color);
   border: 3px solid var(--extra-button-color);
-  border-radius: 2px;
 }
 
 .bookmark-button:active {
@@ -200,6 +204,10 @@
 }
 
 /* здесь будут стили для формы поиска, когда дойду до форм */
+
+.look-bookmarks::before {
+  background-image: url("../img/icon-bookmark.svg");
+}
 
 .top-panel-button:active {
   background-color: var(--sub-button-active-color);
@@ -225,6 +233,10 @@
 
 .checkout-button:hover {
   background-color: var(--extra-button-hover-color);
+}
+
+.catalog-button:active {
+  background-color: var(--main-button-active-color);
 }
 
 /* end buttons*/
@@ -444,6 +456,10 @@
   line-height: 20px;
 }
 
+.card-product del {
+  color: var(--deleted-text-color);
+}
+
 .brands-tile li:hover {}
 
 .brands-tile li:active {
@@ -499,6 +515,120 @@
 
 /* end info */
 
+/* catalog-page */
+
+.breadcrumbs {
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.breadcrumbs a {
+  color: var(--main-text-color);
+}
+
+.category-title {
+  font-size: 30px;
+  line-height: 30px;
+  font-weight: 400;
+  text-transform: uppercase;
+  background-color:  var(--title-background-color);
+}
+
+.catalog-filter {
+  font-family: "PT Sans", Arial, sans-serif;
+}
+
+.catalog-filter h3 {
+  background-color: var(--catalog-filter-backgroun-color);
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.catalog-filter h2 {
+  font-size: 17px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
+.sorting-controls {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  background-color: var(--catalog-filter-backgroun-color)
+}
+
+.sorting-controls button {
+  border: none;
+  outline: none;
+  padding: 0;
+  background: transparent;
+  border-bottom: 1px dotted var(--main-button-color);
+  color: var(--disabled-main-text-color);
+  text-transform: uppercase;
+}
+
+.sorting-controls button:hover {
+  border-bottom: 1px solid var(--main-button-color);
+  color: var(--main-text-color);
+}
+
+.sorting-controls .active {
+  border: none;
+  color: var(--main-button-color);
+}
+
+.arrow {
+  font-size: 8px; /* будет 0 */
+}
+
+.catalog-page-button {
+  border: 1px solid var(--filter-button-border-color);
+  border-radius: 2px;
+  color: var(--main-text-color);
+  outline: none;
+  background-color: var(--background-color);
+}
+
+.catalog-page-button:hover {
+  border-color: var(--user-menu-active-button);
+}
+
+.catalog-page-button:active {
+  border-color: var(--main-button-color);
+}
+
+.page-navigation a {
+  color: var(--main-text-color);
+}
+
+.page-navigation .active {
+  color: var(--sub-text-color);
+  background-color: var(--main-button-color);
+}
+
+.cart-popup div {
+  background-color: var(--popup-background-color);
+}
+
+.cart-popup button {
+  border-radius: 0;
+}
+
+.cart-popup .checkout-button {
+  background-color: var(--main-button-color);
+}
+
+.resume-button {
+  color: var(--main-text-color);
+  background-color: var(--background-color);
+}
+
+
+/* end catalog page */
+
 /* footer */
 
 .main-footer {
@@ -513,6 +643,8 @@
 
 .main-footer-logo {
   text-transform: uppercase;
+  background-color: var(--main-button-color);
+  border-radius: 0;
 }
 
 .secondary-footer-navigation a,
@@ -522,6 +654,10 @@
 
 .main-footer a:hover {
   text-decoration: underline;
+}
+
+.main-footer a:active {
+  text-decoration: none;
 }
 
 .main-footer-content a:active {
@@ -553,3 +689,36 @@
 }
 
 /* end footer */
+
+/* временные наработки, подлежат оптимизации во время код-ревью (перед защитой) */
+
+.filter-form {
+  font-size: 15px;
+  line-height: 19px;
+  text-transform: uppercase;
+}
+
+.filter-form legend {
+  font-size: 17px;
+  line-height: 30px;
+  font-weight: 700;
+}
+
+
+/* в будущем проще ставить #цвет, (но создавать при этом переменную --цвет: #цвет,)а потом поиском с заменой вставлять нужную переменную, уже сейчас ощущаю, что это было бы быстрее */
+
+.about-category {
+  background-color: var(--info-background-color);
+}
+
+.about-category h2 {
+  font-size: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
+.about-category p {
+  font-size: 13px;
+  line-height: 24px;
+  font-family: "PT Sans", Arial, sans-serif;
+}
