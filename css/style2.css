@@ -62,67 +62,16 @@
 /* Variables */
 
 :root {
-  
-  --sub-panel-color: #293449; /* --dark-blue: */
-  --main-panel-color: #32425C; /* --basic-blue: */
-  
-  --main-button-color: #EE3643; /* --basic-red: */
-  --main-button-active-color: #BA2732; /* --darken-red: */
-  --main-button-hover-color: #CA2C37; /* --dark-red: */
-  --sub-button-color: #FF5357; /* --light-red: */
-  --sub-button-active-color: #161D29; /* --darken-blue: */
-  --extra-button-color: #63A63E; /* --basic-green: */
-  --extra-button-hover-color: #5FBB2D; /* --light-green: */
-  --extra-button-active-color: #518534; /* --dark-green: */
-  --user-menu-active-button: #C5C5C5; /* --basic-gray: */
-  --sprite-basic-color: #3D546F; /* --light-blue: */
-  
-  --tile-button-color: rgba(255, 255, 255, 0.3); /* --transparent-white: */
-  --tile-button-hover-color: rgba(169, 169, 169, 0.3); /* --transparent-gray: */
-  --tile-button-active-color: rgba(197, 197, 197, 0.3); /* --transparent-dark-gray: */
-  
-    
-  --main-text-color: #000; /* --black: */
-  --disabled-main-text-color: rgba(0, 0, 0, 0.3);
-  --sub-text-color: #FFF; /* --white: */
-  --sub-text-active-color: rgba(255, 255, 255, 0.5); /* --very-transparent-white: */
-  --extra-text-color: #FFD180; /* --basic-yellow: */
-  --deleted-text-color: #A9A9A9; /* --light-gray: */
  
-  --header-background-color: #F3F7F8; /* --basic-off-white: */
-  --title-background-color: #F2F6F8; /* --dark-off-white: */
-  --content-background-color: #F9F5F0; /* --light-off-white: */
-  --background-color: #FFF; /* повтор */
-  --info-background-color: #F1F5F7; /* --darken-off-white*/
-  --social-background-color: #212A3A; /* --darken-blue: */
-  --navigation-active-background-color: #1D2739; /* --darkest-blue: */
-  --catalog-filter-backgroun-color: #F7F3EC;
-  --slider-background-color: #999; /* --darkest-gray: */
-  --popup-background-color: #F1F1F1;
-  
-  --content-tile-orange: #FFC047;
-  --content-tile-blue: #3BBCE3;
-  --content-tile-pink: #DC91D8;
-  --content-tile-green: #8ED78F;
-  
-  --filter-button-border-color: #E5E5E5;
 }
 
-/* общие правила для страницы */
+
 .page-body {
-  min-width: 940px;
-  margin: 0;
-  padding: 0;
   background-color: var(--background-color);
   font-family: "Cuprum", Arial, sans-serif;
   font-weight: 400;
   font-style: normal;
   color: var(--main-text-color);
-}
-
-.page-body a {
-  text-decoration: none;
-  color: var(--sub-text-color);
 }
 
 .page-body ul {
@@ -141,6 +90,8 @@
   line-height: 24px;
   min-height: 42px;
 }
+
+/* header-logo */
 
 .main-header-logo {
   background-color: var(--main-button-color);
@@ -181,11 +132,6 @@
   background-color: var(--extra-button-color);
 }
 
-.buy-button::before {
-  content: url("../img/icon-cart.svg");
-  opacity: 0.3;
-}
-
 .buy-button:hover {
   background-color: var(--extra-button-hover-color);
 }
@@ -203,24 +149,11 @@
 .bookmark-button:active {
   opacity: 0.5;
 }
-
 .bookmark-button:hover {
   border-color: var(--main-panel-color);
 }
 
-.search-panel input {
-  background-color: inherit;
-  box-shadow: none;
-  outline: none;
-  border: none;
-  color: var(--sub-text-color);
-  background: url("../img/icon-search.svg") no-repeat;
-}
-
-.search-panel input:focus {
-  background-color: var(--background-color);
-  color: var(--main-text-color);
-}
+/* здесь будут стили для формы поиска, когда дойду до форм */
 
 .top-panel-button:active {
   background-color: var(--sub-button-active-color);
@@ -234,18 +167,6 @@
 
 .top-panel-button:hover::before {
   opacity: 1;
-}
-
-.top-panel-button:active::before {
-  opacity: 0.3;
-}
-
-.look-bookmarks::before {
-  content: url("../img/icon-bookmark.svg");
-}
-
-.look-cart::before {
-  content: url("../img/icon-cart.svg");
 }
 
 .checkout-button {
@@ -284,10 +205,6 @@
   font-weight: 700;
 }
 
-.header-tel::before {
-  content: url("../img/icon-phone.svg");
-}
-
 .header-adress {
   color: var(--main-panel-color);
   font-size: 14px;
@@ -304,23 +221,23 @@
 }
 
 .user-menu-button .log-out-button {
-  font-size: 0; 
+  font-size: 12px; /* здесть будет 0 */
 }
 
 .logged-out-button:hover {
   color: var(--main-button-color); 
 }
 
-.log-in-button::before {  
-  content: url("../img/icon-login.svg");
+.log-in-button::before {
+  content: 'sprte1';
 }
 
 .logged-in-button::before {
-  content: url('../img/icon-user.svg');
+  content: 'sprite2';
 }
 
 .log-out-button::before {
-  content: url("../img/icon-logout.svg");
+  content: 'sprite3';
 }
 
 .log-in-button:hover::before,
