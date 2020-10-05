@@ -420,14 +420,14 @@
 }
 
 .drills-slider {
-  background: url("../img/slider-drill.jpg") no-repeat;
+ /* background: url("../img/slider-drill.jpg") no-repeat; */
   height: 266px;
   width: 620px;
   background-color: var(--slider-background-color);
 }
 
 .perforators-slider {
-  background: url("../img/slider-perforator.jpg") no-repeat;
+ /* background: url("../img/slider-perforator.jpg") no-repeat; */
   height: 266px;
   width: 620px;
   background-color: var(--slider-background-color);
