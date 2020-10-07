@@ -132,7 +132,6 @@
   min-height: 100%;
   display: grid;
   grid-template-rows: min-content 1fr min-content;
-  align-content: start;
 }
 
 .page-body a {
@@ -156,13 +155,22 @@
   background-color: var(--sub-panel-color);
   font-size: 18px;
   line-height: 24px;
-  min-height: 42px;
+
+}
+
+.header-top-panel a {
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
 }
 
 .main-header-logo {
   background-color: var(--main-button-color);
   border-radius: 0;
 }
+
 
 .main-header-logo:active {
   background-color: var(--main-button-active-color);
@@ -288,6 +296,7 @@
 .header-content {
   display: flex;
   justify-content: space-between;
+  
 }
 
 .header-site-navigation {
@@ -296,23 +305,32 @@
 }
 
 .header-site-navigation li {
-  flex-grow: 1 ;
+  flex-grow: 1;
+  text-align: center;
 }
 
 .top-panel-intefrace {
   display: grid;
-  grid-template-columns: 220px 1fr max-content max-content max-content;
+  grid-template-columns: 220px 1fr repeat(3, 150px);
+  height: 42px;
 }
 
-.header-content h1 {
-  display: none;
-}
 
 .header-slogan {
   color: var(--main-button-color);
   font-style: italic;
   sont-size: 16px;
   line-height: 23px;
+  margin-left: 30px;
+}
+
+.header-content-section {
+  display:flex;
+  align-items:center;
+}
+
+.header-contacts {
+  flex-direction: column;
 }
 
 .header-content-section .header-tel {
@@ -320,6 +338,12 @@
   font-size: 21px;
   line-height: 30px;
   font-weight: 700;
+  outline: 3px solid var(--sub-text-color);
+  width: 270px;
+  height: 45px;
+  display:flex;
+  align-items:center;
+  justify-content: center;
 }
 
 .header-tel::before {
@@ -420,7 +444,18 @@
 .header-site-navigation {
   background-color: var(--main-panel-color);
   font-size: 18px;
-  line-height: 24px;
+}
+
+.header-site-navigation li {
+
+}
+
+.header-site-navigation a {
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
 }
 
 .header-site-navigation a:hover {
@@ -536,6 +571,18 @@
 
 .brands-tile li:nth-child(4n) {
   margin-right: 0;
+}
+
+.brands-tile a {
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.brands-tile img {
+  
 }
 
 .content-tile-item:nth-child(2),
