@@ -863,7 +863,6 @@
   margin: 0;
   margin-top: 64px;
   outline: 3px solid rgba(255, 144, 144, 0.5);
-  width: min-content;
 }
 
 .info-paragraph {
