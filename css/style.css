@@ -1163,8 +1163,6 @@
   color: var(--sub-text-color);
   z-index: 1;
   height: 300px;
-  display: flex;
-  flex-direction: column;
 }
 
 .main-footer-content {
