@@ -20,15 +20,15 @@
             <input type="search" name="search" id="search-form" placeholder="Поиск:">
             <label for="search-form"></label>
           </form>
-          <a class="top-panel-button look-bookmarks" href="" title="Отложенный товар">Закладки: <span>0</span></a>
+          <a class="top-panel-button look-bookmarks" href="" title="Отложенный товар"><div>Закладки:&nbsp;<span class="count">0</span></div></a>
           <!-- добавление класса active, если >0 -->
-          <a class="top-panel-button look-cart" href="" title="Посмотреть корзину">Корзина: <span>0</span></a>
+          <a class="top-panel-button look-cart" href="" title="Посмотреть корзину"><div>Корзина:&nbsp;<span class="count">0</span></div></a>
           <!-- добавление класса active, если >0 -->
           <a class="checkout-button" href="" title="Оформить заказ">Оформить заказ</a>
         </div>
       </section>
       <section class="header-content container">
-        <h1 style="display: none">Магазин Техномарт</h1>
+        <h1 class="visually-hidden">Магазин Техномарт</h1>
         <p class="header-content-section header-slogan">Интернет-магазин
           <br>строительных материалов
           <br>и инструментов для ремонта</p>
@@ -46,7 +46,7 @@
             <a class="logged-out-button" href="" title="Впервые у нас? Зарегистрируйтесь!">Регистрация</a>
           </div>
         </div>
-        <div class="header-content-section user-interface" style="display: none">
+        <div class="header-content-section user-interface visually-hidden">
           <!-- display: none путем добавления/удаления через JS -->
           <div class="user-menu-button">
             <!-- ::before - спрайт -->
@@ -77,7 +77,7 @@
     </header>
     <main class="center">
       <section class="content-categories container">
-        <h2 style="display: none">Популярные разделы</h2>
+        <h2 class="visually-hidden">Популярные разделы</h2>
         <!--    <section class="content-slider">
           <ul class="content-slider-list">
             <li class="content-slider-item drills-slider" style="display: none">
@@ -108,7 +108,7 @@
         <div class="content-tile">
           <div class="grid-slider">
             <div class="content-slider-list">
-              <div class="content-slider-item drills-slider" style="display: none">
+              <div class="content-slider-item drills-slider">
                 <div class="text-slider">
                   <div class="text-container">
                     <h3>Дрели</h3>
@@ -117,7 +117,7 @@
                 </div>
                 <a class="button catalog-button" href="catalog.html" title="Перейти в каталог">Открыть каталог</a>
               </div>
-              <div class="content-slider-item perforators-slider">
+              <div class="content-slider-item perforators-slider visually-hidden">
                 <div class="text-slider">
                   <div class="text-container">
                     <h3>Перфораторы</h3>
@@ -129,7 +129,8 @@
               </div>
             </div>
             <div class="content-slider-strider">
-              <!-- стайдер: ?disabled? радиокнопки <input>-->
+              <button type="button" class="slide-1">Слайд 1</button>
+              <button type="button" class="slide-2 active">Слайд 2</button>
             </div>
             <div class="content-slider-navigation">
               <!-- Круговое переключение -->
@@ -139,7 +140,7 @@
           </div>
           <div class="content-tile-item">
             <a href="">
-              <h3>Материалы</h3>
+              <h3 class="new-label">Материалы</h3>
               <!-- псевдо - new -->
               <p class="tile-button">на любой вкус</p>
               <!-- спрайт -->
@@ -201,7 +202,7 @@
               <button class="button buy-button" type="button">Купить</button>
               <button class="button bookmark-button" type="button">В закладки</button>
             </div>
-            <h3>Перфоратор BOSCH BFG 3000</h3>
+            <h3 class="new-label">Перфоратор BOSCH BFG 3000</h3>
             <del>22500 Р.</del>
             <button class="button price-button" type="button">15500 Р.</button>
           </li>
@@ -224,7 +225,7 @@
               <button class="button buy-button" type="button">Купить</button>
               <button class="button bookmark-button" type="button">В закладки</button>
             </div>
-            <h3>Перфоратор BOSCH BFG 2000</h3>
+            <h3 class="new-label">Перфоратор BOSCH BFG 2000</h3>
             <del></del>
             <button class="button price-button" type="button">15500 Р.</button>
           </li>
@@ -281,25 +282,29 @@
                 <!-- радиокнопка-->Кредит</li>
             </ul>
           </aside>
-          <div class="services-item">
-            <div class="services-item-text">
+          <div class="services-item visually-hidden">
+            <div class="services-item-text delivery-back">
               <h2 class="info-title">Доставка</h2>
               <p class="info-paragraph delivery-paragraph">Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем,
               <br>поднимая его на ваш этаж!</p>
             </div>
           </div>
-          <div class="services-item" style="display: none">
-            <h2 class="info-title">Гарантия</h2>
-            <p class="info-paragraph guarantee-paragraph">Если купленный у нас товар поломается или заискрит,
-              <br>а также в случае пожара, спровоцированного его возгоранием, вы всегда можете быть уверены в нашей гарантии. Мы обменяем сгоревший товар на новый.
-              <br>Дом уж восстановите как-нибудь сами.</p>
+          <div class="services-item visually-hidden">
+            <div class="services-item-text guarantee-back">
+              <h2 class="info-title">Гарантия</h2>
+              <p class="info-paragraph guarantee-paragraph">Если купленный у нас товар поломается или заискрит,
+                <br>а также в случае пожара, спровоцированного его возгоранием, вы всегда можете быть уверены в нашей гарантии. Мы обменяем сгоревший товар на новый.
+                <br>Дом уж восстановите как-нибудь сами.</p>
+            </div>
           </div>
-          <div class="services-item" style="display: none">
-            <h2 class="info-title">Кредит</h2>
-            <p class="info-paragraph credit-paragraph">Залезть в долговую яму стало проще!
-              <br>Кредитные консультанты придут вам на помощью</p>
-            <button class="button catalog-button" type="button">Отправить заявку</button>
-            <!-- popup написать нам? -->
+          <div class="services-item">
+            <div class="services-item-text credit-back">
+              <h2 class="info-title">Кредит</h2>
+              <p class="info-paragraph credit-paragraph">Залезть в долговую яму стало проще!
+                <br>Кредитные консультанты придут вам на помощью</p>
+              <button class="button catalog-button" type="button">Отправить заявку</button>
+              <!-- popup написать нам? -->
+            </div>
           </div>
         </div>
       </section>
@@ -354,29 +359,27 @@
           <p class="copyright">© 2010–2019 Компания «Техномарт»
             <br>Все права защищены</p>
           <ul class="social">
-            <li><a href="" title="Мы Вконтакте">Вконтакте</a></li>
-            <li><a href="" title="Мы на Facebook">Фейсбук</a></li>
-            <li><a href="" title="Мы в Instagram">Инстаграм</a></li>
+            <li><a href="" title="Мы Вконтакте" class="social-vk">Вконтакте</a></li>
+            <li><a href="" title="Мы на Facebook" class="social-fb">Фейсбук</a></li>
+            <li><a href="" title="Мы в Instagram" class="social-inst">Инстаграм</a></li>
           </ul>
           <p class="contact-us">Обратная связь: <a href="mailto:mail@htmlacademy.ru" title="Написать нам">mail@htmlacademy.ru</a></p>
           <p classs="developer">Разработано - <a href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a></p>
         </div>
       </div>
     </footer>
-    <section class="write-us-popup" style="display: none">
-      <h2 style="display: none">Написать нам</h2>
+    <section class="write-us-popup popup visually-hidden">
+      <h2 class="visually-hidden">Написать нам</h2>
       <!-- hidden -->
       <!-- Здесь будет форма заявки input, textarea, label, submit-->
-      <button class="button" type="submit">Отправить</button>
+      <button class="submit-button" type="submit">Отправить</button>
       <button class="close-button" type="button">Закрыть</button>
-      <!-- font-size = 0 -->
     </section>
-    <section class="map-popup" style="display: none">
-      <h2 style="display: none">Схема проезда</h2>
+    <section class="map-popup popup visually-hidden">
+      <h2 class="visually-hidden">Схема проезда</h2>
       <!-- hidden -->
       <img src="img/big-map.png" width="943" height="449" alt="Большая Конюшенная ул., 19">
       <button class="close-button" type="button">Закрыть</button>
     </section>
   </body>
-
 </html>
