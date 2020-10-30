@@ -20,15 +20,15 @@
             <input type="search" name="search" id="search-form" placeholder="Поиск:">
             <label for="search-form"></label>
           </form>
-          <a class="top-panel-button look-bookmarks" href="" title="Отложенный товар">Закладки: <span>0</span></a>
+          <a class="top-panel-button look-bookmarks" href="" title="Отложенный товар">Закладки:&nbsp;<span>0</span></a>
           <!-- добавление класса active, если >0 -->
-          <a class="top-panel-button look-cart catalog-button" href="" title="Посмотреть корзину">Корзина: <span>10</span></a>
+          <a class="top-panel-button look-cart active" href="" title="Посмотреть корзину"><div>Корзина:&nbsp;<span class="count">10</span></div></a>
           <!-- добавление класса active, если >0 -->
           <a class="checkout-button" href="" title="Оформить заказ">Оформить заказ</a>
         </div>
       </section>
       <section class="header-content container">
-        <h1 style="display: none">Магазин Техномарт</h1>
+        <h1 class="visually-hidden">Магазин Техномарт</h1>
         <p class="header-content-section header-slogan">Интернет-магазин
           <br>строительных материалов
           <br>и инструментов для ремонта</p>
@@ -37,7 +37,7 @@
           <a class="header-tel" href="tel:+78125550555" title="позвонить нам">+7 (812) 555-05-55</a>
           <p class="header-adress">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
         </div>
-        <div class="header-content-section user-interface" style="display: none">
+        <div class="header-content-section user-interface visually-hidden">
           <div class="user-menu-button">
             <!-- српайт -->
             <a class="logged-out-button log-in-button" href="" title="Войти в профиль">Войти</a>
@@ -78,42 +78,40 @@
     <main class="center">
       <div class="container catalog-page-content">
         <ul class="breadcrumbs">
-          <li>
-            <a href="index.html" title="На Главную"><img src="#" width="1" height="1" alt="домой"></a>
-          </li>
+          <li class="breadcrums-home"><a href="index.html" title="На Главную">Домой</a></li>
           <li><a href="catalog.html" title="Все товары">Каталог</a></li>
           <li><a href="" title="В раздел Инструменты">Инструменты</a></li>
-          <li><a href="" title="В категорию Перфораторы">Перфораторы</a></li>
+          <li class="breadcrums-current"><a href="" title="В категорию Перфораторы">Перфораторы</a></li>
         </ul>
         <h1 class="category-title">Перфораторы</h1>
         <aside class="catalog-filter">
           <h3>Фильтр:</h3>
-          <div class="price-filter">
+          <fieldset class="price-filter filter-form">
             <h2>Цена:</h2>
             <!-- ползунки-диапазон, делается на JS -->
             <!-- две формы -->
-          </div>
+          </fieldset>
           <fieldset class="filter-form">
             <legend>Производители:</legend>
             <ul>
-              <li>
-                <input type="checkbox" name="bosch" id="bosch" checked>
+              <li class="filter-option">
+                <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="bosch" id="bosch" checked>
                 <label for="bosch">Bosch</label>
               </li>
-              <li>
-                <input type="checkbox" name="interscol" id="interscol">
+              <li class="filter-option">
+                <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="interscol" id="interscol">
                 <label for="interscol">Интерскол</label>
               </li>
-              <li>
-                <input type="checkbox" name="makita" id="makita" checked>
+              <li class="filter-option">
+                <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="makita" id="makita" checked>
                 <label for="makita">Makita</label>
               </li>
-              <li>
-                <input type="checkbox" name="dewalt" id="dewalt">
+              <li class="filter-option">
+                <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="dewalt" id="dewalt">
                 <label for="dewalt">Dewalt</label>
               </li>
-              <li>
-                <input type="checkbox" name="hitachi" id="hitachi">
+              <li class="filter-option">
+                <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="hitachi" id="hitachi">
                 <label for="hitachi">Hitachi</label>
               </li>
             </ul>
@@ -121,12 +119,12 @@
           <fieldset class="filter-form">
             <legend>Питание:</legend>
             <ul>
-              <li>
-                <input type="radio" name="power" value="accu" id="accu" checked>
+              <li class="filter-option">
+                <input class="visually-hidden filter-input-radio filter-input" type="radio" name="power" value="accu" id="accu" checked>
                 <label for="accu">Аккумуляторные</label>
               </li>
-              <li>
-                <input type="radio" name="power" value="plug" id="plug">
+              <li class="filter-option">
+                <input class="visually-hidden filter-input-radio filter-input" type="radio" name="power" value="plug" id="plug">
                 <label for="plug">Сетевые</label>
               </li>
             </ul>
@@ -150,11 +148,11 @@
             <button type="button">По типу</button>
             <button type="button">По функционалу</button>
             <div class="sort-direction">
-              <button class="active arrow" type="button">По убыванию</button>
-              <button class="arrow" type="button">По возврастанию</button>
+              <button class="active sort-arrow" type="button">По возврастанию</button>
+              <button class="sort-arrow" type="button">По убыванию</button>
             </div>
           </div>
-          <h2 style="display: none">Каталог товаров</h2>
+          <h2 class="visually-hidden">Каталог товаров</h2>
           <!-- hidden -->
           <ul class="catalog main-catalog">
             <!-- поскольку количество товаров может быть любым - возможно уместно испоьзовать флексы -->
@@ -264,7 +262,7 @@
             </li>
           </ul>
           <ul class="page-navigation">
-            <li style="display: none">
+            <li class="visually-hidden">
               <button class="catalog-page-button page-prev-button" type="button">Предыдущая</button>
             </li>
             <!-- display: none -->
@@ -310,20 +308,22 @@
           <p class="copyright">© 2010–2019 Компания «Техномарт»
             <br>Все права защищены</p>
           <ul class="social">
-            <li><a href="" title="Мы Вконтакте">Вконтакте</a></li>
-            <li><a href="" title="Мы на Facebook">Фейсбук</a></li>
-            <li><a href="" title="Мы в Instagram">Инстаграм</a></li>
+            <li><a href="" title="Мы Вконтакте" class="social-vk">Вконтакте</a></li>
+            <li><a href="" title="Мы на Facebook" class="social-fb">Фейсбук</a></li>
+            <li><a href="" title="Мы в Instagram" class="social-inst">Инстаграм</a></li>
           </ul>
           <p class="contact-us">Обратная связь: <a href="mailto:mail@htmlacademy.ru" title="Написать нам">mail@htmlacademy.ru</a></p>
           <p classs="developer">Разработано - <a href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a></p>
         </div>
       </div>
     </footer>
-    <section class="cart-popup" style="display: none">
-      <!-- иконка ::before -->
-      <h2>Товар добавлен в корзину!</h2>
-      <div>
-        <button class="button checkout-button" type="button">Оформить заказ</button>
+    <section class="popup cart-popup">
+      <div class="popup-content">
+        <!-- иконка ::before -->
+        <h2>Товар добавлен в корзину!</h2>
+      </div>
+      <div class="controls">
+        <button class="button catalog-button" type="button">Оформить заказ</button>
         <button class="button resume-button" type="button">Продолжить покупки</button>
         <!-- действие - закрыть -->
       </div>
