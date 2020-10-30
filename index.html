@@ -368,17 +368,30 @@
         </div>
       </div>
     </footer>
-    <section class="write-us-popup popup visually-hidden">
+    <section class="write-us-popup popup">
       <h2 class="visually-hidden">Написать нам</h2>
+      <div class="popup-content">
+        <form class="write-us-form">
+          <label for="name">Ваше имя:</label>
+          <label for="email">Ваш e-mail:</label>
+          <input type="text" name="name" id="name" placeholder="Представьтесь, пожалуйста">
+          <input type="email" name="email" id="email" placeholder="Для отправки ответа">
+          <label for="message" class="text-field">Текст письма:</label>
+          <textarea name="message" id="message" placeholder="В свободной форме"></textarea>
+        </form>
+      </div>
       <!-- hidden -->
       <!-- Здесь будет форма заявки input, textarea, label, submit-->
-      <button class="submit-button" type="submit">Отправить</button>
       <button class="close-button" type="button">Закрыть</button>
+      <div class="controls">
+        <button class="submit-button button" type="submit">Отправить</button>
+      </div>
     </section>
     <section class="map-popup popup visually-hidden">
       <h2 class="visually-hidden">Схема проезда</h2>
       <!-- hidden -->
-      <img src="img/big-map.png" width="943" height="449" alt="Большая Конюшенная ул., 19">
+      <!-- <img src="img/big-map.png" width="943" height="449" alt="Большая Конюшенная ул., 19"> -->
+      <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/2/saint-petersburg/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Санкт‑Петербург</a><a href="https://yandex.ru/maps/2/saint-petersburg/house/bolshaya_konyushennaya_ulitsa_19_8/Z0kYdQVjSEQPQFtjfXVyeXpgYQ==/?ll=30.320944%2C59.938728&utm_medium=mapframe&utm_source=maps&z=17.7" style="color:#eee;font-size:12px;position:absolute;top:14px;">Яндекс.Карты</a><iframe src="https://yandex.ru/map-widget/v1/-/CCQ~rHeJ~D" width="943" height="443" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
       <button class="close-button" type="button">Закрыть</button>
     </section>
   </body>
