@@ -1646,6 +1646,7 @@
   display: flex;
   align-self: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .social li {
@@ -1674,25 +1675,23 @@
   min-height: 44px;
   background-repeat: no-repeat;
   background-position: center;
-  position: absolute;
+  display: block;
+  margin: 18px 2px 0 2px;
 }
 
 .social-vk::before {
   content: '';
   background-image: url("../img/icon-vk.svg");
-  left: -45px;
 }
 
 .social-fb::before {
   content: '';
   background-image: url("../img/icon-fb.svg");
-  left: 0;
 }
 
 .social-inst::before {
   content: '';
   background-image: url("../img/icon-insta.svg");
-  left: 45px;
 }
 /* end footer */
 
