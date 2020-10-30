@@ -1823,12 +1823,39 @@
 .write-us-popup label {
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 18px;
+  height: 24px;
+  padding-top: 5px;
 }
 
 .write-us-popup input,
 .write-us-popup textarea {
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
+  padding: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 2px solid var(--user-menu-active-button);
+  border-radius: 2px;
+}
+
+#message {
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+
+.write-us-form textarea {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  resize: none;
+}
+
+.write-us-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 24px 38px 24px 114px;
+  grid-column-gap: 20px;
+  grid-row-gap: 12px;
+  width: 460px;
 }
 
 .map-popup {
@@ -1840,6 +1867,7 @@
 
 .write-us-popup .submit-button {
   background-color: var(--main-button-color);
+  width: 460px;
 }
 
 .top-panel-intefrace > .active{
