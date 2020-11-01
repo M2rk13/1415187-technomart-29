@@ -408,6 +408,7 @@
 .look-cart {
   padding-left: 49px;
   padding-right: 26px;
+  z-index: 1;
 }
 
 .look-cart::before {
@@ -2147,15 +2148,22 @@
   width: 460px;
 }
 
-.top-panel-intefrace > .active{
+.top-panel-intefrace > .active::after {
+  content: '';
   background-color: var(--main-button-color);
+  width: 136px;
+  height: 41px;
+  position: absolute;
+  top: 0;
+  left: 14px;;
+  z-index: -1;  
 }
 
-.top-panel-intefrace > .active:hover {
+.top-panel-intefrace > .active:hover::after {
   background-color: var(--main-button-hover-color)
 }
 
-.top-panel-intefrace > .active:active {
+.top-panel-intefrace > .active:active::after {
   background-color: var(--main-button-active-color)
 }
 
@@ -2164,6 +2172,7 @@
   height: 275px;
   margin-left: -310px;
   margin-top: -141px;
+  transform: scale(0.9);
 }
 
 .popup-content {
