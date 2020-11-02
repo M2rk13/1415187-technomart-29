@@ -327,6 +327,23 @@
   background-color: var(--main-button-hover-color);
 }
 
+.card-product .button-container {
+  width: 142px;
+  position: relative;
+  background-color: transparent;
+  position: absolute;
+  top: 260px;
+  left: 45px;
+  border-radius: 5px;
+}
+
+.price-button {
+  width: 113px;
+  padding-left: 10px;
+  margin-top: 1px;
+  margin-left: -3px;
+}
+
 .price-button::after {
   content: '';
   position: absolute;
@@ -336,28 +353,24 @@
   border-left-color: var(--main-button-color);
   width: 0;
   height: 0;
-  top: 0;
+  top: 0px;
   right: calc(-115px/3);
 }
 
 .product-action {
   justify-self: center;
   position: absolute;
-  display: flex;
   flex-direction: column;
   width: 135px;
   margin-top: 29px;
   margin-right: 3px;
+  display: none;
 }
 
 .product-action button {
   margin-top: 10px;
   border-radius: 2px;
   font-size: 14px;
-}
-
-.hidden {
-  visibility: hidden;
 }
 
 .buy-button {
@@ -784,15 +797,25 @@
   display: grid;
   grid-template-rows: 50% 1fr 1fr 1fr;
   justify-content: center;
+  align-content: center;
   font-weight: 700;
   margin-top: 20px;
   position: relative;
   outline: 1px solid var(--filter-button-border-color);
+  position: relative;
 }
 
 .brands-tile li:hover,
 .card-product:hover {
   box-shadow: 0 4px 20px var(--main-shadow-color);
+}
+
+.card-product:hover > .product-action {
+    display: flex;
+}
+
+.card-product:hover > img {
+  visibility: hidden;
 }
 
 .brands-tile li:nth-child(4n),
@@ -815,7 +838,7 @@
   max-width: 170px;
   text-align: center;
   justify-self: center;
-  margin: 19px 0 0;
+  margin: 22px -2px 0;
 }
 
 .card-product del {
