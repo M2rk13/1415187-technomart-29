@@ -1261,6 +1261,7 @@
 
 .filter-input-checkbox:checked+label::before {
   background-image: url(../img/checkbox-on.svg);
+  width: 28px;
 }
 
 .filter-input-checkbox:checked+label:hover::before {
