@@ -15,7 +15,7 @@
   --extra-button-hover-color: #5FBB2D;
   --extra-button-active-color: #518534;
   --user-menu-active-button: #C5C5C5;
-  --user-menu-active-button-hover: #B5B5B5;
+  --user-menu-active-button-hover: #B5B5B5;ma
   --scale-background-color: #D7DCDE;
   --scale-active-color: #00CA74;
   --scale-controls-color: #ABABAB;
@@ -43,14 +43,28 @@
   --content-tile-pink: #DC91D8;
   --content-tile-green: #8ED78F;
   --filter-button-border-color: #E5E5E5;
+  --tab-access-color: #E8CB0B;
 }
+
 
 @font-face {
   font-family: 'Cuprum';
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: local('Cuprum Regular'), local('Cuprum-Regular'), url(../fonts/cuprum.woff2) format('woff2'), url(../fonts/cuprum.woff) format('woff');
+  src: local(''),
+       url('../fonts/cuprum-v13-latin_cyrillic-regular.woff2') format('woff2'),
+       url('../fonts/cuprum-v13-latin_cyrillic-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Cuprum';
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: local(''),
+       url('../fonts/cuprum-v13-latin_cyrillic-700.woff2') format('woff2'),
+       url('../fonts/cuprum-v13-latin_cyrillic-700.woff') format('woff');
 }
 
 @font-face {
@@ -58,15 +72,9 @@
   font-style: italic;
   font-weight: 400;
   font-display: block;
-  src: local('Cuprum Italic'), local('Cuprum-Italic'), url(../fonts/cuprumitalic.woff2) format('woff2'), url(../fonts/cuprumitalic.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Cuprum';
-  font-style: normal;
-  font-weight: 700;
-  font-display: block;
-  src: local('Cuprum Bold'), local('Cuprum-Bold'), url(../fonts/cuprumbold.woff2) format('woff2'), url(../fonts/cuprumbold.woff) format('woff');
+  src: local(''),
+       url('../fonts/cuprum-v13-latin_cyrillic-italic.woff2') format('woff2'),
+       url('../fonts/cuprum-v13-latin_cyrillic-italic.woff') format('woff');
 }
 
 @font-face {
@@ -74,15 +82,20 @@
   font-style: italic;
   font-weight: 700;
   font-display: block;
-  src: local('Cuprum Bold Italic'), local('Cuprum-BoldItalic'), url(../fonts/cuprumbolditalic.woff2) format('woff2'), url(../fonts/cuprumbolditalic.woff) format('woff');
+  src: local(''),
+       url('../fonts/cuprum-v13-latin_cyrillic-700italic.woff2') format('woff2'),
+       url('../fonts/cuprum-v13-latin_cyrillic-700italic.woff') format('woff');
 }
+
 
 @font-face {
   font-family: 'PT Sans';
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: local('PT Sans'), local('PTSans-Regular'), url(../fonts/ptsans.woff2) format('woff2'), url(../fonts/ptsans.woff) format('woff');
+  src: local('PT Sans'), local('PTSans-Regular'),
+       url('../fonts/pt-sans-v12-latin_cyrillic-regular.woff2') format('woff2'),
+       url('../fonts/pt-sans-v12-latin_cyrillic-regular.woff') format('woff');
 }
 
 @font-face {
@@ -90,7 +103,9 @@
   font-style: normal;
   font-weight: 700;
   font-display: block;
-  src: local('PT Sans Bold'), local('PTSans-Bold'), url(../fonts/ptsansbold.woff2) format('woff2'), url(../fonts/ptsansbold.woff) format('woff');
+  src: local('PT Sans Bold'), local('PTSans-Bold'),
+       url('../fonts/pt-sans-v12-latin_cyrillic-700.woff2') format('woff2'),
+       url('../fonts/pt-sans-v12-latin_cyrillic-700.woff') format('woff');
 }
 
 .page {
@@ -974,13 +989,23 @@
 }
 
 .service-item {
-  min-height: 64px;
   line-height: 61px;
   padding-left: 22px;
   font-weight: 700;
   box-sizing: border-box;
   box-shadow: inset 0 1px 0 var(--help-color-service-list), inset 0 -1px 0 var(--sub-panel-color);
   cursor: pointer;
+}
+
+.service-item button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  min-height: 62px;
+  text-align: left;
+  color: inherit;
+  padding: 0;
 }
 
 .about-us,
@@ -1019,10 +1044,9 @@
 .map-mini {
   border: 0;
   background: 0 0;
-  position: relative;
-  right: 6px;
-  top: 1px;
   outline: 0;
+  height: 158px;
+  width: 300px;
 }
 
 .services-list {
@@ -1131,6 +1155,7 @@
   font-size: 18px;
   line-height: 24px;
   margin: 0;
+  margin-top: 5px;
   position: relative;
 }
 
@@ -1328,17 +1353,14 @@
   background-color: var(--user-menu-active-button-hover);
 }
 
-.filter-input-radio+label:active::before {
-  opacity: .75;
-}
-
+.filter-input-radio+label:active::before,
 .filter-input-radio:checked+label:active::after {
-  opacity: .75;
+  opacity: 0.75;
 }
 
 .filter-input-checkbox+label:active,
 .filter-input-radio+label:active {
-  opacity: .4;
+  opacity: 0.4;
 }
 
 .catalog-filter .filter-form {
@@ -1439,6 +1461,12 @@
   margin: 0;
 }
 
+.price-controls,
+.sorting-controls {
+  display: flex;
+  justify-content: space-between;
+}
+
 .price-controls::after {
   content: '';
   width: 10px;
@@ -1449,13 +1477,7 @@
   left: 105px;
 }
 
-.price-controls,
-.sorting-controls {
-  display: flex;
-  justify-content: space-between;
-}
-
-.sorting-controls>button {
+.sorting-controls > button {
   outline: 0;
   border: 0;
   padding: 0;
@@ -1709,7 +1731,7 @@
   justify-content: center;
 }
 
-.social ::before,
+.social::before,
 .social li {
   position: relative;
 }
@@ -2009,8 +2031,16 @@
   display: none;
 }
 
-.page button:focus-visible,
-.page a:focus-visible,
-.page input:focus-visible {
-  outline: 3px solid green;
+.page *:focus-visible,
+.filter-input-checkbox:focus-visible + label::before,
+.filter-input-radio:focus-visible + label::before,
+.social a:focus-visible::before{
+  outline: 3px solid var(--main-button-color);
+  box-shadow: 
+    inset 2px 2px 2px 1px var(--tab-access-color),
+    inset -2px -2px 2px 1px var(--tab-access-color);
+}
+
+.visually-hidden > .button {
+  display: none;
 }

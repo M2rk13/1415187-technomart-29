@@ -5,7 +5,6 @@
     <title>ТЕХНОМАРТ - Главная</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
   </head>
   <body class="page-body">
     <header class="main-header">
@@ -16,13 +15,15 @@
           <img src="img/logo-technomart.png" width="108" height="18" alt="Магазин Техномарт">
           </a>
           <form class="search-panel">
-            <input type="search" name="search" id="search-form" placeholder="Поиск:">
+            <input type="search" name="search" id="search-form" placeholder="Поиск:" aria-label="Поиск по сайту">
             <label for="search-form"></label>
           </form>
           <a class="top-panel-button look-bookmarks" href="" title="Отложенный товар">
+            <span class="visually-hidden">открыть</span>
             <div>Закладки:&nbsp;<span class="count">0</span></div>
           </a>
           <a class="top-panel-button look-cart" href="" title="Посмотреть корзину">
+            <span class="visually-hidden">открыть</span>
             <div>Корзина:&nbsp;<span class="count">0</span></div>
           </a>
           <a class="checkout-button" href="" title="Оформить заказ">Оформить заказ</a>
@@ -37,12 +38,12 @@
           </p>
         </div>
         <div class="header-content-section header-contacts">
-          <a class="header-tel" href="tel:+78125550555" title="позвонить нам">+7 (812) 555-05-55</a>
-          <p class="header-adress">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
+          <a class="header-tel" href="tel:+78125550555" title="позвонить нам"><span class="visually-hidden">наш телефон  </span>+7 (812) 555-05-55</a>
+          <p class="header-adress" tabindex="0" aria-label="Наш адрес город Санкт Петербург, улица Большая Конюшенная, дом 19 / 8">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
         </div>
         <div class="header-content-section user-interface">
           <div class="user-menu-button">
-            <a class="logged-out-button log-in-button" href="" title="Войти в профиль">Войти</a>
+            <a class="logged-out-button log-in-button" href="" title="Войти в профиль">Войти<span class="visually-hidden">в профиль</span></a>
           </div>
           <div class="user-menu-button">
             <a class="logged-out-button" href="" title="Впервые у нас? Зарегистрируйтесь!">Регистрация</a>
@@ -77,7 +78,7 @@
         <div class="content-tile">
           <div class="grid-slider">
             <div class="content-slider-list">
-              <div class="content-slider-item drills-slider visually-hidden">
+              <div class="content-slider-item drills-slider none-display">
                 <div class="text-slider">
                   <div class="text-container">
                     <h3>Дрели</h3>
@@ -140,55 +141,55 @@
       <section class="popular-products container">
         <div class="popular-title">
           <h2>Популярные товары:</h2>
-          <a class="button catalog-button" href="">Все популярные товары</a>
+          <a class="button catalog-button" href=""><span class="visually-hidden">открыть</span>Все популярные товары</a>
         </div>
         <ul class="catalog index-catalog">
           <li class="card-product">
             <img src="img/bosch-bfg-9000.png" width="184" height="164" alt="Перфоратор BOSCH BFG 9000">
-            <div class="product-action visually-hidden">
+            <div class="product-action none-display">
               <button class="button buy-button" type="button">Купить</button>
               <button class="button bookmark-button" type="button">В закладки</button>
             </div>
             <h3>Перфоратор BOSCH BFG 9000</h3>
             <del>32500 Р.</del>
-            <button class="button price-button" type="button">25500 Р.</button>
+            <button class="button price-button" type="button"><span class="visually-hidden">добавить в корзину, цена</span>25500 Р.</button>
           </li>
           <li class="card-product">
             <img src="img/bosch-bfg-3000.png" width="127" height="112" alt="Перфоратор BOSCH BFG 3000">
-            <div class="product-action visually-hidden">
+            <div class="product-action none-display">
               <button class="button buy-button" type="button">Купить</button>
               <button class="button bookmark-button" type="button">В закладки</button>
             </div>
             <h3 class="new-label">Перфоратор BOSCH BFG 3000</h3>
             <del>22500 Р.</del>
-            <button class="button price-button" type="button">15500 Р.</button>
+            <button class="button price-button" type="button"><span class="visually-hidden">добавить в корзину, цена</span>15500 Р.</button>
           </li>
           <li class="card-product">
             <img src="img/bosch-bfg-6000.png" width="144" height="128" alt="Перфоратор BOSCH BFG 6000">
-            <div class="product-action visually-hidden">
+            <div class="product-action none-display">
               <button class="button buy-button" type="button">Купить</button>
               <button class="button bookmark-button" type="button">В закладки</button>
             </div>
             <h3>Перфоратор BOSCH BFG 6000</h3>
             <del>30500 Р.</del>
-            <button class="button price-button" type="button">25500 Р.</button>
+            <button class="button price-button" type="button"><span class="visually-hidden">добавить в корзину, цена</span>25500 Р.</button>
           </li>
           <li class="card-product">
             <img src="img/bosch-bfg-2000.png" width="127" height="112" alt="Перфоратор BOSCH BFG 2000">
-            <div class="product-action visually-hidden">
+            <div class="product-action none-display">
               <button class="button buy-button" type="button">Купить</button>
               <button class="button bookmark-button" type="button">В закладки</button>
             </div>
             <h3 class="new-label">Перфоратор BOSCH BFG 2000</h3>
             <del>22500</del>
-            <button class="button price-button" type="button">15500 Р.</button>
+            <button class="button price-button" type="button"><span class="visually-hidden">добавить в корзину, цена</span>15500 Р.</button>
           </li>
         </ul>
       </section>
       <section class="popular-brands container">
         <div class="popular-title">
           <h2>Популярные производители:</h2>
-          <a class="button catalog-button" href="">Все производители</a>
+          <a class="button catalog-button" href=""><span class="visually-hidden">открыть</span>Все производители</a>
         </div>
         <ul class="brands-tile">
           <li>
@@ -228,13 +229,13 @@
           <aside class="services-menu">
             <ul class="services-list">
               <li class="active service-item">
-                Доставка
+                <button type="button">Доставка</button>
               </li>
               <li class="service-item">
-                Гарантия
+                <button type="button">Гарантия</button>
               </li>
               <li class="service-item">
-                Кредит
+                <button type="button">Кредит</button>
               </li>
             </ul>
           </aside>
@@ -261,7 +262,7 @@
               <p class="info-paragraph credit-paragraph">Залезть в долговую яму стало проще!
                 <br>Кредитные консультанты придут вам на помощью
               </p>
-              <button class="button catalog-button write-us-button" type="button">Отправить заявку</button>
+              <button class="button catalog-button write-us-button" type="button" disabled>Отправить заявку</button>
             </div>
           </div>
         </div>
@@ -286,8 +287,10 @@
           <p class="info-paragraph">Вы можете забрать товар сами,
             <br>заехав в наш офис:
           </p>
-          <button type="button" class="map-mini"><img src="img/mini-map.png" width="300" height="158" alt="Наш офис по адресу: Большая Конюшенная, 19"></button>
-          <a class="button catalog-button" href="">Заблудились? Напишите нам!</a>
+          <a href="img/big-map.png" target="_blank" class="map-mini">
+            <img src="img/mini-map.png" width="300" height="158" alt="Наш офис по адресу: Большая Конюшенная, 19">
+          </a>
+          <a class="button catalog-button" href="write-us-form.html" target="_blank">Заблудились? Напишите нам!</a>
         </section>
       </div>
     </main>
@@ -317,19 +320,26 @@
             <br>Все права защищены
           </p>
           <ul class="social">
-            <li><a href="" title="Мы Вконтакте" class="social-vk">Вконтакте</a></li>
-            <li><a href="" title="Мы на Facebook" class="social-fb">Фейсбук</a></li>
-            <li><a href="" title="Мы в Instagram" class="social-inst">Инстаграм</a></li>
+            <li>
+              <a href="" title="Мы Вконтакте" class="social-vk">
+                <span class="visually-hidden">наша страница в</span>Вконтакте</a>
+            </li>
+            <li>
+              <a href="" title="Мы на Facebook" class="social-fb"><span class="visually-hidden">наша страница в</span>Фейсбук</a>
+            </li>
+            <li>
+              <a href="" title="Мы в Instagram" class="social-inst"><span class="visually-hidden">наша страница в</span>Инстаграм</a>
+            </li>
           </ul>
           <p class="contact-us">Обратная связь: <a href="mailto:mail@htmlacademy.ru" title="Написать нам">mail@htmlacademy.ru</a></p>
           <p class="developer">Разработано - <a href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a></p>
         </div>
       </div>
     </footer>
-    <section class="write-us-popup popup visually-hidden">
+    <section class="write-us-popup popup none-display">
       <h2 class="visually-hidden">Написать нам</h2>
       <div class="popup-content">
-        <form class="write-us-form">
+        <form class="write-us-form" method="get" action="https://echo.htmlacademy.ru" target="_blank">
           <label for="name">Ваше имя:</label>
           <label for="email">Ваш e-mail:</label>
           <input type="text" name="name" id="name" placeholder="Имя Фамилия">
@@ -338,12 +348,12 @@
           <textarea class="message" name="message" id="message" placeholder="В свободной форме"></textarea>
         </form>
       </div>
-      <button class="close-button" type="button" aria-label="Закрыть"></button>
       <div class="controls">
         <button class="submit-button button" type="submit">Отправить</button>
       </div>
+      <button class="close-button" type="button" aria-label="Закрыть"></button>
     </section>
-    <section class="map-popup popup visually-hidden">
+    <section class="map-popup popup none-display">
       <h2 class="visually-hidden">Схема проезда</h2>
       <iframe src="https://yandex.ru/map-widget/v1/-/CCQ~rHeJ~D" width="943" height="443" style="position:relative;" title="Офис компании находится по адресу Большая Конюшенная ул., 19"></iframe>
       <button class="close-button" type="button" aria-label="Закрыть"></button>
