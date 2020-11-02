@@ -674,7 +674,8 @@
   line-height: 36px;
   text-transform: uppercase;
   font-weight: 700;
-  margin: -3px 0 4px;
+  margin: 0;
+  margin-bottom: 4px;
 }
 
 .text-slider p {
@@ -2034,8 +2035,18 @@
 .page *:focus-visible,
 .filter-input-checkbox:focus-visible + label::before,
 .filter-input-radio:focus-visible + label::before,
-.social a:focus-visible::before{
-  outline: 3px solid var(--main-button-color);
+.social a:focus-visible::before {
+  outline: 3px solid var(--extra-button-color);
+  box-shadow: 
+    inset 2px 2px 2px 1px var(--tab-access-color),
+    inset -2px -2px 2px 1px var(--tab-access-color);
+}
+
+.page *:-moz-focusring,
+.filter-input-checkbox:-moz-focusring + label::before,
+.filter-input-radio:-moz-focusring + label::before,
+.social a:-moz-focusring::before {
+  outline: 3px solid var(--extra-button-color);
   box-shadow: 
     inset 2px 2px 2px 1px var(--tab-access-color),
     inset -2px -2px 2px 1px var(--tab-access-color);
