@@ -1,45 +1,4 @@
 @charset "utf-8";
-@font-face {
-  font-family: 'Cuprum';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Cuprum Regular'), local('Cuprum-Regular'), url(../fonts/cuprum.woff2) format('woff2'), url(../fonts/cuprum.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Cuprum';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Cuprum Italic'), local('Cuprum-Italic'), url(../fonts/cuprumitalic.woff2) format('woff2'), url(../fonts/cuprumitalic.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Cuprum';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Cuprum Bold'), local('Cuprum-Bold'), url(../fonts/cuprumbold.woff2) format('woff2'), url(../fonts/cuprumbold.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Cuprum';
-  font-style: italic;
-  font-weight: 700;
-  src: local('Cuprum Bold Italic'), local('Cuprum-BoldItalic'), url(../fonts/cuprumbolditalic.woff2) format('woff2'), url(../fonts/cuprumbolditalic.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'PT Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('PT Sans'), local('PTSans-Regular'), url(../fonts/ptsans.woff2) format('woff2'), url(../fonts/ptsans.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'PT Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: local('PT Sans Bold'), local('PTSans-Bold'), url(../fonts/ptsansbold.woff2) format('woff2'), url(../fonts/ptsansbold.woff) format('woff');
-}
 
 :root {
   --sub-panel-color: #293449;
@@ -86,6 +45,54 @@
   --filter-button-border-color: #E5E5E5;
 }
 
+@font-face {
+  font-family: 'Cuprum';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: local('Cuprum Regular'), local('Cuprum-Regular'), url(../fonts/cuprum.woff2) format('woff2'), url(../fonts/cuprum.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Cuprum';
+  font-style: italic;
+  font-weight: 400;
+  font-display: block;
+  src: local('Cuprum Italic'), local('Cuprum-Italic'), url(../fonts/cuprumitalic.woff2) format('woff2'), url(../fonts/cuprumitalic.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Cuprum';
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: local('Cuprum Bold'), local('Cuprum-Bold'), url(../fonts/cuprumbold.woff2) format('woff2'), url(../fonts/cuprumbold.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Cuprum';
+  font-style: italic;
+  font-weight: 700;
+  font-display: block;
+  src: local('Cuprum Bold Italic'), local('Cuprum-BoldItalic'), url(../fonts/cuprumbolditalic.woff2) format('woff2'), url(../fonts/cuprumbolditalic.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: local('PT Sans'), local('PTSans-Regular'), url(../fonts/ptsans.woff2) format('woff2'), url(../fonts/ptsans.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: local('PT Sans Bold'), local('PTSans-Bold'), url(../fonts/ptsansbold.woff2) format('woff2'), url(../fonts/ptsansbold.woff) format('woff');
+}
+
 .page {
   height: 100%;
 }
@@ -106,6 +113,7 @@
   color: var(--main-text-color);
   min-height: 100%;
   display: grid;
+  grid-template-rows: -webkit-min-content 1fr -webkit-min-content;
   grid-template-rows: min-content 1fr min-content;
 }
 
@@ -152,6 +160,14 @@
 
 .search-panel input::-webkit-search-cancel-button {
   display: none;
+}
+
+.search-panel input::-webkit-input-placeholder {
+  color: var(--sub-text-color);
+}
+
+.search-panel input::-moz-placeholder {
+  color: var(--sub-text-color);
 }
 
 .search-panel input::placeholder {
@@ -260,6 +276,7 @@
   border: 0;
   height: 38px;
   display: inline-block;
+  vertical-align: middle;
   line-height: 38px;
   text-align: center;
   cursor: pointer;
@@ -612,6 +629,8 @@
   flex-grow: 1;
   text-align: center;
   height: 60px;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
   min-width: max-content;
 }
 
@@ -637,7 +656,7 @@
 
 .text-slider h3 {
   font-size: 36px;
-  font-height: 36px;
+  line-height: 36px;
   text-transform: uppercase;
   font-weight: 700;
   margin: -3px 0 4px;
@@ -876,9 +895,10 @@
   text-transform: uppercase;
   text-align: center;
   background-color: var(--tile-button-color);
-  display: inline-block;
   height: 38px;
   min-width: 125px;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
   max-width: max-content;
   position: absolute;
   padding: 0 5px;
@@ -941,7 +961,8 @@
   display: grid;
   grid-template-columns: 240px 1fr;
   row-gap: 70px;
-  column-gap: 80px;
+  -moz-column-gap: 80px;
+       column-gap: 80px;
 }
 
 .services-about {
@@ -950,16 +971,6 @@
 
 .services-menu {
   position: relative;
-}
-
-.services-list::after {
-  content: '';
-  background: url(../img/shadow.png);
-  height: 297px;
-  width: 10px;
-  position: absolute;
-  right: 0;
-  top: -15%;
 }
 
 .service-item {
@@ -1018,12 +1029,22 @@
   color: var(--sub-text-color);
   background-color: var(--main-panel-color);
   font-size: 21px;
-  line-hieght: 30px;
+  line-height: 30px;
   margin: 0;
 }
 
 .service-item:hover {
   background-color: var(--sub-panel-color);
+}
+
+.services-list::after {
+  content: '';
+  background: url(../img/shadow.png);
+  height: 297px;
+  width: 10px;
+  position: absolute;
+  right: 0;
+  top: -15%;
 }
 
 .services-list .active {
@@ -1125,7 +1146,6 @@
 .logistic-list li::before {
   content: '';
   border: 1px solid var(--main-button-color);
-  writing-mode: tb-rl;
   position: absolute;
   width: 23px;
   left: 0;
@@ -1237,7 +1257,9 @@
   position: relative;
   display: block;
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .filter-input-checkbox+label::before {
@@ -1655,6 +1677,7 @@
 
 .footer-bootom-controls {
   display: grid;
+  grid-template-columns: repeat(2, 1fr) repeat(2, -webkit-min-content);
   grid-template-columns: repeat(2, 1fr) repeat(2, min-content);
   height: 100%;
   align-items: center;
@@ -1786,6 +1809,7 @@
 .logged-in-interface .user-menu-button {
   padding: 0;
   display: grid;
+  grid-template-columns: -webkit-max-content -webkit-min-content;
   grid-template-columns: max-content min-content;
   width: 300px;
   justify-content: center;
@@ -1806,7 +1830,8 @@
   border: 0;
   padding: 0;
   white-space: nowrap;
-  clip-path: inset(100%);
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
@@ -1982,4 +2007,10 @@
 
 .none-display {
   display: none;
+}
+
+.page button:focus-visible,
+.page a:focus-visible,
+.page input:focus-visible {
+  outline: 3px solid green;
 }

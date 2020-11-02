@@ -5,19 +5,21 @@
     <title>ТЕХНОМАРТ - каталог</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
   </head>
   <body class="page-body">
     <header class="main-header">
       <section class="header-top-panel">
+        <h2 class="visually-hidden">Меню верхней панели</h2>
         <div class="container top-panel-intefrace">
           <a class="main-header-logo button" href="index.html">
-          <img src="img/logo-technomart.png" width="108" height="18" alt="Техномарт">
+          <img src="img/logo-technomart.png" width="108" height="18" alt="Магазин Техномарт"><span class="visually-hidden">перейти на главную</span>
           </a>
           <form class="search-panel" method="get" action="https://echo.htmlacademy.ru" target="_blank">
-            <input type="search" name="search" id="search-form" placeholder="Поиск:">
+            <input type="search" name="search" id="search-form" placeholder="Поиск:" aria-label="Поиск по сайту">
             <label for="search-form"></label>
           </form>
-          <a class="top-panel-button look-bookmarks" href="" title="Отложенный товар">Закладки:&nbsp;<span>0</span></a>
+          <a class="top-panel-button look-bookmarks" href="" title="Отложенный товар"><span class="visually-hidden">посмотреть</span>Закладки:&nbsp;<span>0</span></a>
           <a class="top-panel-button look-cart active" href="" title="Посмотреть корзину">
             <div>Корзина:&nbsp;<span class="count">10</span></div>
           </a>
