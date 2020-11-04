@@ -75,12 +75,12 @@ optionsList.onclick = function(event) {
   event.target.classList.add('active');
   for (i = 0; i < serviceOptions.length; i++) {
   if (serviceOptions[i].classList.contains('active') == false) {
-    if (!(serviceItems[i].classList.contains('none-display'))) {
-    serviceItems[i].classList.add("none-display"),
+    if (!(serviceItems[i].classList.contains('visually-hidden'))) {
+    serviceItems[i].classList.add("visually-hidden"),
     serviceItems[i].classList.remove("services-animation");
     }
   } else {
-    serviceItems[i].classList.remove("none-display"),
+    serviceItems[i].classList.remove("visually-hidden"),
     serviceItems[i].classList.add("services-animation");
   }
 }
