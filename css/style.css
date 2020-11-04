@@ -2120,6 +2120,11 @@
   z-index: 100;
 }
 
+.animation-slider {
+  -webkit-animation: fadeContent 500ms forwards;
+          animation: fadeContent 500ms forwards;
+}
+
 .services-animation {
   -webkit-animation: fadeContent 500ms forwards;
           animation: fadeContent 500ms forwards;
