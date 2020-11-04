@@ -363,6 +363,24 @@
   margin-left: 14px;
 }
 
+.top-panel-intefrace > .active:hover {
+  background-color: var(--main-button-hover-color);
+  width: 121px;
+  display: block;
+  padding-left: 15px;
+  padding-right: 0;
+  margin-left: 14px;
+}
+
+.top-panel-intefrace > .active:active {
+  background-color: var(--main-button-active-color);
+  width: 121px;
+  display: block;
+  padding-left: 15px;
+  padding-right: 0;
+  margin-left: 14px;
+}
+
 .top-panel-intefrace > .active::before {
   left: -2px;
 }

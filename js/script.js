@@ -14,6 +14,7 @@ var cartCount = Number(document.querySelector(".look-cart .count").innerHTML),
 const cartBtn = document.querySelectorAll(".buy-button, .button-container"),
   cartMessage = document.querySelector(".cart-popup"),
   cartActive = document.querySelector(".look-cart"),
+  bookmarkBtn = document.querySelectorAll(".bookmark-button");
   writeBtn = document.querySelectorAll(".write-us-call"),
   writeWindow = document.querySelector(".write-us-popup"),
   mapBtn = document.querySelector(".map-mini"),
@@ -63,6 +64,14 @@ if (cartBtn) {
   window.addEventListener("keydown", function (a) {
     27 === a.keyCode && cartMessage.classList.contains("animation") && (cartMessage.classList.remove("animation"), cartMessage.classList.add("none-display"));
   });
+}
+
+if (bookmarkBtn) {
+  for (i = 0; i < bookmarkBtn.length; i++) bookmarkBtn[i].addEventListener("click", function (a) {
+    a.preventDefault(),
+      document.querySelector(".look-bookmarks .count").innerHTML = String(Number(document.querySelector(".look-bookmarks .count").innerHTML)+1);
+    }
+  );
 }
 
 if (writeBtn) {
