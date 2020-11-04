@@ -102,8 +102,6 @@ if (mapBtn) {
   });
 }
 
-
-
 if (serviceOptions) {
   for (i = 0; i < serviceOptions.length; i++) serviceOptions[i].addEventListener('click', function (event) {
   serviceOptions.forEach(element => element.classList.remove('active')),
@@ -126,7 +124,7 @@ if (striderList) {
   for (i = 0; i < striderList.length; i++) striderList[i].addEventListener('click', function (event) {
     var temp = Array.from(striderList).indexOf(event.target);
     toggleSlider(temp);
-})
+});
 }
 
 if(sliderBtn) {
