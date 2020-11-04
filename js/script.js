@@ -1,99 +1,113 @@
-let currentSlide;
+const cartBtn = document.querySelectorAll('.buy-button, .button-container'),
+  cartMessage = document.querySelector('.cart-popup'),
+  cartActive = document.querySelector('.look-cart'),
+  bookmarkBtn = document.querySelectorAll('.bookmark-button'),
+  writeBtn = document.querySelectorAll('.write-us-call'),
+  writeWindow = document.querySelector('.write-us-popup'),
+  mapBtn = document.querySelector('.map-mini'),
+  map = document.querySelector('.map-popup'),
+  closeBtn = document.querySelectorAll('.close-button, .resume-button'),
+  serviceOptions = document.querySelectorAll('.service-item button'),
+  serviceItems = document.querySelectorAll('.services-item'),
+  sliderList = document.querySelectorAll('.content-slider-item'),
+  striderList = document.querySelectorAll('.content-slider-strider button'),
+  cartCountElement = document.querySelector('.look-cart .count'),
+  bookmarksCountElement = document.querySelector('.look-bookmarks .count'),
+  sliderBtn = document.querySelectorAll('.slider-button'),
+  submitBtn = document.querySelector('.submit-button');
 
-var cartCount = Number(document.querySelector(".look-cart .count").innerHTML),
-    toggleSlider = function (t) {
-  sliderList.forEach(n => n.classList.remove("animation-slider")),
-  sliderList.forEach(n => n.classList.add("none-display")),
-  striderList.forEach(n => n.classList.remove('active')),
-  sliderList[t].classList.add("animation-slider"),
-  sliderList[t].classList.remove("none-display"),
-  striderList[t].classList.add('active'),
-  currentSlide = t;
+let cartCount = Number(cartCountElement.innerHTML),
+	currentSlide;
+ 
+////////////////
+
+let   toggleSlider = function (current) {
+      sliderList.forEach(element => element.classList.remove('animation-slider')),
+      sliderList.forEach(element => element.classList.add('none-display')),
+      striderList.forEach(element => element.classList.remove('active')),
+      sliderList[current].classList.add('animation-slider'),
+      sliderList[current].classList.remove('none-display'),
+      striderList[current].classList.add('active'),
+      currentSlide = current;
 };
-
-const cartBtn = document.querySelectorAll(".buy-button, .button-container"),
-  cartMessage = document.querySelector(".cart-popup"),
-  cartActive = document.querySelector(".look-cart"),
-  writeBtn = document.querySelectorAll(".write-us-call"),
-  writeWindow = document.querySelector(".write-us-popup"),
-  mapBtn = document.querySelector(".map-mini"),
-  map = document.querySelector(".map-popup"),
-  closeBtn = document.querySelectorAll(".close-button, .resume-button"),
-  serviceOptions = document.querySelectorAll(".service-item button"),
-  optionsList = document.querySelector(".services-list"),
-  serviceItems = document.querySelectorAll(".services-item"),
-  sliderList = document.querySelectorAll(".content-slider-item"),
-  striderList = document.querySelectorAll(".content-slider-strider button"),
-  striderListParent = document.querySelector(".content-slider-strider"),
-  sliderBtn = document.querySelectorAll(".slider-button"),
-  sliderBtnParent = document.querySelector(".content-slider-navigation");
 
 /////////////////
 
-document.addEventListener("DOMContentLoaded", () => {
-    for (var i = 0; i < sliderList.length; i++) if (sliderList[i].classList.contains("animation-slider")) {
+document.addEventListener('DOMContentLoaded', () => {
+    for (var i = 0; i < sliderList.length; i++) if (sliderList[i].classList.contains('animation-slider')) {
     currentSlide = i;
     break;
   }
   });
 
-document.querySelector(".submit-button").addEventListener("click", function () {
-  document.querySelector(".write-us-form").submit(),
-    writeWindow.classList.remove("animation"), writeWindow.classList.add("none-display");
+if (submitBtn) {
+  submitBtn.addEventListener('click', function () {
+  document.querySelector('.write-us-form').submit(),
+    writeWindow.classList.remove('animation'), writeWindow.classList.add('none-display');
 });
+}
 
 if (cartBtn) {
-  for (var i = 0; i < cartBtn.length; i++) cartBtn[i].addEventListener("click", function (a) {
-    a.preventDefault(),
-      cartMessage.classList.add("animation"),
-      cartMessage.classList.remove("none-display"),
+  for (var i = 0; i < cartBtn.length; i++) cartBtn[i].addEventListener('click', function (event) {
+    event.preventDefault(),
+      cartMessage.classList.add('animation'),
+      cartMessage.classList.remove('none-display'),
       cartCount++,
-      document.getElementById("cart").focus(),
-      document.querySelector(".look-cart .count").innerHTML = String(cartCount);
+      document.getElementById('cart').focus(),
+      cartCountElement.innerHTML = String(cartCount);
     if (((cartActive.classList.contains('active') !== true)) && (cartCount > 0)) {
       cartActive.classList.add('active');
     }
   });
-  for (i = 0; i < closeBtn.length; i++) closeBtn[i].addEventListener("click", function (a) {
-    a.preventDefault(),
-      cartMessage.classList.remove("animation"),
-      cartMessage.classList.add("none-display"),
-      document.getElementById("write-us-btn");
+  for (i = 0; i < closeBtn.length; i++) closeBtn[i].addEventListener('click', function (event) {
+    event.preventDefault(),
+      cartMessage.classList.remove('animation'),
+      cartMessage.classList.add('none-display'),
+      document.getElementById('write-us-btn');
   });
-  window.addEventListener("keydown", function (a) {
-    27 === a.keyCode && cartMessage.classList.contains("animation") && (cartMessage.classList.remove("animation"), cartMessage.classList.add("none-display"));
+  window.addEventListener('keydown', function (event) {
+    27 === event.keyCode && cartMessage.classList.contains('animation') && (cartMessage.classList.remove('animation'), cartMessage.classList.add('none-display'));
   });
 }
 
+if (bookmarkBtn) {
+  for (i = 0; i < bookmarkBtn.length; i++) bookmarkBtn[i].addEventListener('click', function (event) {
+    event.preventDefault(),
+      bookmarksCountElement.innerHTML = String(Number(bookmarksCountElement.innerHTML)+1);
+    }
+  );
+}
+
 if (writeBtn) {
-  for (i = 0; i < writeBtn.length; i++) writeBtn[i].addEventListener("click", function (a) {
-      a.preventDefault(), writeWindow.classList.add("animation"),
-        writeWindow.classList.remove("none-display"),
-        document.getElementById("name").focus();
+  for (i = 0; i < writeBtn.length; i++) writeBtn[i].addEventListener('click', function (event) {
+      event.preventDefault(), writeWindow.classList.add('animation'),
+        writeWindow.classList.remove('none-display'),
+        document.getElementById('name').focus();
     }),
-    window.addEventListener("keydown", function (a) {
-      27 === a.keyCode && writeWindow.classList.contains("animation") && (writeWindow.classList.remove("animation"), writeWindow.classList.add("none-display"));
+    window.addEventListener('keydown', function (event) {
+      27 === event.keyCode && writeWindow.classList.contains('animation') && (writeWindow.classList.remove('animation'), writeWindow.classList.add('none-display'));
     });
-  for (i = 0; i < closeBtn.length; i++) closeBtn[i].addEventListener("click", function (a) {
-    a.preventDefault(), writeWindow.classList.remove("animation"), writeWindow.classList.add("none-display");
+  for (i = 0; i < closeBtn.length; i++) closeBtn[i].addEventListener('click', function (event) {
+    event.preventDefault(), writeWindow.classList.remove('animation'), writeWindow.classList.add('none-display');
   });
 }
 
 if (mapBtn) {
-  mapBtn.addEventListener("click", function (a) {
-    a.preventDefault(), map.classList.add("animation"), map.classList.remove("none-display"),
-      document.getElementById("map").focus();
+  mapBtn.addEventListener('click', function (event) {
+    event.preventDefault(), map.classList.add('animation'), map.classList.remove('none-display'),
+      document.getElementById('map').focus();
   });
-  for (i = 0; i < closeBtn.length; i++) closeBtn[i].addEventListener("click", function (a) {
-    a.preventDefault(), map.classList.remove("animation"), map.classList.add("none-display");
+  for (i = 0; i < closeBtn.length; i++) closeBtn[i].addEventListener('click', function (event) {
+    event.preventDefault(), map.classList.remove('animation'), map.classList.add('none-display');
   });
-  window.addEventListener("keydown", function (a) {
-    27 === a.keyCode && map.classList.contains("animation") && (map.classList.remove("animation"), map.classList.add("none-display"));
+  window.addEventListener('keydown', function (event) {
+    27 === event.keyCode && map.classList.contains('animation') && (map.classList.remove('animation'), map.classList.add('none-display'));
   });
 }
 
-optionsList.onclick = function(event) {
-  serviceOptions.forEach(n => n.classList.remove('active')),
+if (serviceOptions) {
+  for (i = 0; i < serviceOptions.length; i++) serviceOptions[i].addEventListener('click', function (event) {
+  serviceOptions.forEach(element => element.classList.remove('active')),
   event.target.classList.add('active');
   for (i = 0; i < serviceOptions.length; i++) {
   if (serviceOptions[i].classList.contains('active') === false) {
@@ -106,14 +120,18 @@ optionsList.onclick = function(event) {
     serviceItems[i].classList.add("services-animation");
   }
 }
-};
+});
+}
 
-striderListParent.onclick = function(event) {
-  var temp = Array.from(striderList).indexOf(event.target);
-  toggleSlider(temp);
-};
+if (striderList) {
+  for (i = 0; i < striderList.length; i++) striderList[i].addEventListener('click', function (event) {
+    var temp = Array.from(striderList).indexOf(event.target);
+    toggleSlider(temp);
+});
+}
 
-sliderBtnParent.onclick = function(event) {
+if(sliderBtn) {
+  for (i = 0; i < sliderBtn.length; i++) sliderBtn[i].addEventListener('click', function (event) {
   var temp = Array.from(sliderBtn).indexOf(event.target);
   if ((temp === 1)&&(currentSlide < (sliderList.length-1))) {
     currentSlide++;
@@ -123,15 +141,16 @@ sliderBtnParent.onclick = function(event) {
         currentSlide = 0;
         toggleSlider(currentSlide);
       } else {
-        if ((temp === 0)&&(currentSlide >= (sliderList.length-1))) {
+        if ((temp === 0)&&(currentSlide > (0))) {
           currentSlide--;
           toggleSlider(currentSlide);
         } else {
-          if ((temp === 0)&&(currentSlide < (sliderList.length-1))) {
+          if ((temp === 0)&&(currentSlide <= (0))) {
             currentSlide = sliderList.length-1;
             toggleSlider(currentSlide);
         }
       }
   }
 }
-};
+});
+}
