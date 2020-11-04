@@ -13,7 +13,8 @@ const cartBtn = document.querySelectorAll('.buy-button, .button-container'),
   striderList = document.querySelectorAll('.content-slider-strider button'),
   cartCountElement = document.querySelector('.look-cart .count'),
   bookmarksCountElement = document.querySelector('.look-bookmarks .count'),
-  sliderBtn = document.querySelectorAll('.slider-button');
+  sliderBtn = document.querySelectorAll('.slider-button'),
+  submitBtn = document.querySelector('.submit-button');
 
 let cartCount = Number(cartCountElement.innerHTML),
 	currentSlide;
@@ -39,10 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   });
 
-document.querySelector('.submit-button').addEventListener('click', function () {
+if (submitBtn) {
+  submitBtn.addEventListener('click', function () {
   document.querySelector('.write-us-form').submit(),
     writeWindow.classList.remove('animation'), writeWindow.classList.add('none-display');
 });
+}
 
 if (cartBtn) {
   for (var i = 0; i < cartBtn.length; i++) cartBtn[i].addEventListener('click', function (event) {

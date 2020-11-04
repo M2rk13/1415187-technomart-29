@@ -1640,6 +1640,7 @@
   height: 20px;
   width: 20px;
   margin: 0 3px;
+  cursor: pointer;
 }
 
 .sort-arrow:last-child {
@@ -1656,7 +1657,8 @@
   left: 5px;
 }
 
-.sort-arrow:hover::before {
+.sort-arrow:hover::before,
+.sort-direction .active:hover::before {
   border-bottom: 10px solid var(--main-text-color);
 }
 
