@@ -768,7 +768,7 @@
 .content-slider-strider {
   position: absolute;
   bottom: 36px;
-  width: 30px;
+  min-width: 30px;
   left: 295px;
   display: flex;
   justify-content: space-between;

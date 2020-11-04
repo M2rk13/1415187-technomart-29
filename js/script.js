@@ -123,11 +123,11 @@ sliderBtnParent.onclick = function(event) {
         currentSlide = 0;
         toggleSlider(currentSlide);
       } else {
-        if ((temp === 0)&&(currentSlide >= (sliderList.length-1))) {
+        if ((temp === 0)&&(currentSlide > (0))) {
           currentSlide--;
           toggleSlider(currentSlide);
         } else {
-          if ((temp === 0)&&(currentSlide < (sliderList.length-1))) {
+          if ((temp === 0)&&(currentSlide <= (0))) {
             currentSlide = sliderList.length-1;
             toggleSlider(currentSlide);
         }
