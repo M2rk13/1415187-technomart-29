@@ -130,6 +130,48 @@
   }
 }
 
+@-webkit-keyframes error {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-20px);
+  }
+  40% {
+    transform: translateX(20px);
+  }
+  60% {
+    transform: translateX(-10px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes error {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-20px);
+  }
+  40% {
+    transform: translateX(20px);
+  }
+  60% {
+    transform: translateX(-10px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .page {
   height: 100%;
 }
@@ -144,6 +186,7 @@
   margin: 0;
   padding: 0;
   background-color: var(--background-color);
+
   font-family: "Cuprum", Arial, sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -841,11 +884,11 @@
 
 .card-product {
   width: 220px;
-  height: 318px;
+  min-height: 318px;
   margin-right: 20px;
   background-color: var(--background-color);
   display: grid;
-  grid-template-rows: 50% 1fr 1fr 1fr;
+  grid-template-rows: 178px 1fr 43px 59px;
   justify-content: center;
   align-content: center;
   font-weight: 700;
@@ -873,25 +916,25 @@
   max-width: 170px;
   text-align: center;
   justify-self: center;
-  margin: 22px -2px 0;
+  margin: 0;
 }
 
 .card-product del {
   color: var(--deleted-text-color);
   justify-self: center;
-  font-size: 17px;
+  font-size: 18px;
   line-height: 18px;
-  margin-top: 7px;
+  margin-top: 12px;
 }
 
 .card-product .button-container {
   width: 142px;
-  position: relative;
   background-color: transparent;
-  position: absolute;
-  top: 260px;
-  left: 45px;
   border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  left: 6px;
 }
 
 .card-product .bookmark-button {
@@ -1055,8 +1098,9 @@
 }
 
 .popular-title h2 {
-  font-size: 28px;
+  font-size: 30px;
   line-height: 30px;
+  font-weight: 400;
   margin: 0 0 0 28px;
 }
 
@@ -1396,6 +1440,7 @@
   height: 23px;
   background-image: url(../img/checkbox-off.svg);
   background-repeat: no-repeat;
+
 }
 
 .filter-input-checkbox + label:hover::before {
@@ -1810,6 +1855,7 @@
   grid-template-columns: repeat(2, 1fr) repeat(2, -webkit-min-content);
   grid-template-columns: repeat(2, 1fr) repeat(2, min-content);
   height: 100%;
+
   align-items: center;
   justify-content: center;
 }
@@ -1822,6 +1868,14 @@
   background-color: var(--sub-panel-color);
   font-size: 16px;
   line-height: 18px;
+}
+
+.footer-contacts {
+  flex-wrap: wrap;
+}
+
+.footer-contacts > * {
+  margin: 0;
 }
 
 .about-category {
@@ -2043,6 +2097,13 @@
   border-radius: 2px;
 }
 
+.write-us-popup span {
+  position: absolute;
+  top: 77px;
+  left: 242px;
+  color: var(--main-button-color);
+}
+
 .message {
   grid-column-start: 1;
   grid-column-end: -1;
@@ -2143,6 +2204,11 @@
 .services-animation {
   -webkit-animation: fadeContent 500ms forwards;
           animation: fadeContent 500ms forwards;
+}
+
+.animation-error {
+  -webkit-animation: error 500ms forwards linear;
+          animation: error 500ms forwards linear;
 }
 
 .product-action .button {

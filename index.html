@@ -135,7 +135,7 @@
         </div>
         <ul class="catalog index-catalog">
           <li class="card-product">
-            <img src="img/bosch-bfg-9000.png" width="184" height="164" alt="Перфоратор BOSCH BFG 9000">
+            <img src="img/bosch-bfg-9000.jpg" width="184" height="164" alt="Перфоратор BOSCH BFG 9000">
             <div class="product-action">
               <a class="button buy-button" href="">Купить</a>
               <a class="button bookmark-button" href="">В закладки</a>
@@ -149,7 +149,7 @@
             </a>
           </li>
           <li class="card-product">
-            <img src="img/bosch-bfg-3000.png" width="127" height="112" alt="Перфоратор BOSCH BFG 3000">
+            <img src="img/bosch-bfg-3000.jpg" width="127" height="112" alt="Перфоратор BOSCH BFG 3000">
             <div class="product-action">
               <a class="button buy-button" href="">Купить</a>
               <a class="button bookmark-button" href="">В закладки</a>
@@ -163,7 +163,7 @@
             </a>
           </li>
           <li class="card-product">
-            <img src="img/bosch-bfg-6000.png" width="144" height="128" alt="Перфоратор BOSCH BFG 6000">
+            <img src="img/bosch-bfg-6000.jpg" width="144" height="128" alt="Перфоратор BOSCH BFG 6000">
             <div class="product-action">
               <a class="button buy-button" href="">Купить</a>
               <a class="button bookmark-button" href="">В закладки</a>
@@ -177,7 +177,7 @@
             </a>
           </li>
           <li class="card-product">
-            <img src="img/bosch-bfg-2000.png" width="127" height="112" alt="Перфоратор BOSCH BFG 2000">
+            <img src="img/bosch-bfg-2000.jpg" width="127" height="112" alt="Перфоратор BOSCH BFG 2000">
             <div class="product-action">
               <a class="button buy-button" href="">Купить</a>
               <a class="button bookmark-button" href="">В закладки</a>
@@ -310,9 +310,10 @@
           <li><a href="">Доставка</a></li>
           <li><a href="">Контакты</a></li>
         </ul>
-        <p class="footer-contacts">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8
-          <br>+7 (812) 555-05-55
-        </p>
+        <div class="footer-contacts">
+          <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
+          <a href="tel:+78125550555" title="позвонить нам">+7 (812) 555-05-55</a>
+        </div>
         <ul class="secondary-footer-navigation">
           <li><a href="">Материалы</a></li>
           <li><a href="">Техника</a></li>
@@ -349,7 +350,8 @@
           <label for="name">Ваше имя:</label>
           <label for="email">Ваш e-mail:</label>
           <input type="text" name="name" id="name" placeholder="Имя Фамилия">
-          <input type="email" name="email" id="email" placeholder="email@example.com">
+          <input type="email" name="email" id="email" placeholder="email@example.com" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" required>
+          <span></span>
           <label for="message" class="text-field message">Текст письма:</label>
           <textarea class="message" name="message" id="message" placeholder="В свободной форме"></textarea>
         </form>
@@ -361,7 +363,7 @@
     </section>
     <section class="map-popup popup none-display">
       <h2 class="visually-hidden">Схема проезда</h2>
-      <iframe id="map" src="https://yandex.ru/map-widget/v1/-/CCQ~rHeJ~D" width="943" height="443" style="position:relative;" title="Офис компании находится по адресу Большая Конюшенная ул., 19"></iframe>
+      <iframe id="map" src="https://yandex.ru/map-widget/v1/-/CCQ~rHeJ~D" width="943" height="443" title="Офис компании находится по адресу Большая Конюшенная ул., 19"></iframe>
       <button class="close-button" type="button" aria-label="Закрыть"></button>
     </section>
     <section class="popup cart-popup none-display">

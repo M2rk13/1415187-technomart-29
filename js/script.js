@@ -4,6 +4,7 @@ const cartBtn = document.querySelectorAll('.buy-button, .button-container'),
   bookmarkBtn = document.querySelectorAll('.bookmark-button'),
   writeBtn = document.querySelectorAll('.write-us-call'),
   writeWindow = document.querySelector('.write-us-popup'),
+  writeForm = document.querySelector('.write-us-form'),
   mapBtn = document.querySelector('.map-mini'),
   map = document.querySelector('.map-popup'),
   closeBtn = document.querySelectorAll('.close-button, .resume-button'),
@@ -14,37 +15,56 @@ const cartBtn = document.querySelectorAll('.buy-button, .button-container'),
   cartCountElement = document.querySelector('.look-cart .count'),
   bookmarksCountElement = document.querySelector('.look-bookmarks .count'),
   sliderBtn = document.querySelectorAll('.slider-button'),
-  submitBtn = document.querySelector('.submit-button');
+  submitBtn = document.querySelector('.submit-button'),
+  pattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 let cartCount = Number(cartCountElement.innerHTML),
-	currentSlide;
- 
+  emailError = document.querySelector('.write-us-popup span'),
+  currentSlide;
+
 ////////////////
 
-let   toggleSlider = function (current) {
-      sliderList.forEach(element => element.classList.remove('animation-slider')),
+let toggleSlider = function (current) {
+    sliderList.forEach(element => element.classList.remove('animation-slider')),
       sliderList.forEach(element => element.classList.add('none-display')),
       striderList.forEach(element => element.classList.remove('active')),
       sliderList[current].classList.add('animation-slider'),
       sliderList[current].classList.remove('none-display'),
       striderList[current].classList.add('active'),
       currentSlide = current;
-};
+  },
+  submitFunc = function () {
+    var txt = document.getElementById("email").value;
+    if (pattern.test(txt)) {
+      writeForm.submit(),
+        submitClose(),
+        emailError.innerHTML = '';
+    } else {
+      emailError.innerHTML = 'Неверный email',
+        writeForm.classList.add('animation-error');
+    }
+    setTimeout(function () {
+      writeForm.classList.remove('animation-error');
+    }, 600);
+  },
+  submitClose = function () {
+    writeWindow.classList.remove('animation'),
+      writeWindow.classList.add('none-display'),
+      document.querySelectorAll('.write-us-form input, .write-us-form textarea').forEach(element => element.value = '');
+  };
 
 /////////////////
 
 document.addEventListener('DOMContentLoaded', () => {
-    for (var i = 0; i < sliderList.length; i++) if (sliderList[i].classList.contains('animation-slider')) {
-    currentSlide = i;
-    break;
-  }
-  });
+  for (var i = 0; i < sliderList.length; i++)
+    if (sliderList[i].classList.contains('animation-slider')) {
+      currentSlide = i;
+      break;
+    }
+});
 
 if (submitBtn) {
-  submitBtn.addEventListener('click', function () {
-  document.querySelector('.write-us-form').submit(),
-    writeWindow.classList.remove('animation'), writeWindow.classList.add('none-display');
-});
+  submitBtn.addEventListener('click', submitFunc);
 }
 
 if (cartBtn) {
@@ -73,9 +93,8 @@ if (cartBtn) {
 if (bookmarkBtn) {
   for (i = 0; i < bookmarkBtn.length; i++) bookmarkBtn[i].addEventListener('click', function (event) {
     event.preventDefault(),
-      bookmarksCountElement.innerHTML = String(Number(bookmarksCountElement.innerHTML)+1);
-    }
-  );
+      bookmarksCountElement.innerHTML = String(Number(bookmarksCountElement.innerHTML) + 1);
+  });
 }
 
 if (writeBtn) {
@@ -85,10 +104,13 @@ if (writeBtn) {
         document.getElementById('name').focus();
     }),
     window.addEventListener('keydown', function (event) {
-      27 === event.keyCode && writeWindow.classList.contains('animation') && (writeWindow.classList.remove('animation'), writeWindow.classList.add('none-display'));
+      27 === event.keyCode && writeWindow.classList.contains('animation') && (submitClose(), (emailError.innerHTML = ''));
+      13 === event.keyCode && !(closeBtn.onfocus) && submitFunc();
     });
   for (i = 0; i < closeBtn.length; i++) closeBtn[i].addEventListener('click', function (event) {
-    event.preventDefault(), writeWindow.classList.remove('animation'), writeWindow.classList.add('none-display');
+    event.preventDefault(),
+      submitClose(),
+      emailError.innerHTML = '';
   });
 }
 
@@ -107,50 +129,50 @@ if (mapBtn) {
 
 if (serviceOptions) {
   for (i = 0; i < serviceOptions.length; i++) serviceOptions[i].addEventListener('click', function (event) {
-  serviceOptions.forEach(element => element.classList.remove('active')),
-  event.target.classList.add('active');
-  for (i = 0; i < serviceOptions.length; i++) {
-  if (serviceOptions[i].classList.contains('active') === false) {
-    if (!(serviceItems[i].classList.contains('visually-hidden'))) {
-    serviceItems[i].classList.add("visually-hidden"),
-    serviceItems[i].classList.remove("services-animation");
+    serviceOptions.forEach(element => element.classList.remove('active')),
+      event.target.classList.add('active');
+    for (i = 0; i < serviceOptions.length; i++) {
+      if (serviceOptions[i].classList.contains('active') === false) {
+        if (!(serviceItems[i].classList.contains('visually-hidden'))) {
+          serviceItems[i].classList.add("visually-hidden"),
+            serviceItems[i].classList.remove("services-animation");
+        }
+      } else {
+        serviceItems[i].classList.remove("visually-hidden"),
+          serviceItems[i].classList.add("services-animation");
+      }
     }
-  } else {
-    serviceItems[i].classList.remove("visually-hidden"),
-    serviceItems[i].classList.add("services-animation");
-  }
-}
-});
+  });
 }
 
 if (striderList) {
   for (i = 0; i < striderList.length; i++) striderList[i].addEventListener('click', function (event) {
     var temp = Array.from(striderList).indexOf(event.target);
     toggleSlider(temp);
-});
+  });
 }
 
-if(sliderBtn) {
+if (sliderBtn) {
   for (i = 0; i < sliderBtn.length; i++) sliderBtn[i].addEventListener('click', function (event) {
-  var temp = Array.from(sliderBtn).indexOf(event.target);
-  if ((temp === 1)&&(currentSlide < (sliderList.length-1))) {
-    currentSlide++;
-    toggleSlider(currentSlide);
-  } else {
-      if ((temp === 1)&&(currentSlide >= (sliderList.length-1))) {
+    var temp = Array.from(sliderBtn).indexOf(event.target);
+    if ((temp === 1) && (currentSlide < (sliderList.length - 1))) {
+      currentSlide++;
+      toggleSlider(currentSlide);
+    } else {
+      if ((temp === 1) && (currentSlide >= (sliderList.length - 1))) {
         currentSlide = 0;
         toggleSlider(currentSlide);
       } else {
-        if ((temp === 0)&&(currentSlide > (0))) {
+        if ((temp === 0) && (currentSlide > (0))) {
           currentSlide--;
           toggleSlider(currentSlide);
         } else {
-          if ((temp === 0)&&(currentSlide <= (0))) {
-            currentSlide = sliderList.length-1;
+          if ((temp === 0) && (currentSlide <= (0))) {
+            currentSlide = sliderList.length - 1;
             toggleSlider(currentSlide);
+          }
         }
       }
-  }
-}
-});
+    }
+  });
 }
