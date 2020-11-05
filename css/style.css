@@ -51,7 +51,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: local(''), url('../fonts/cuprum-v13-latin_cyrillic-regular.woff2') format('woff2'), url('../fonts/cuprum-v13-latin_cyrillic-regular.woff') format('woff');
+  src: local(''), url('../fonts/cuprum-v13-latin-cyrillic-regular.woff2') format('woff2'), url('../fonts/cuprum-v13-latin-cyrillic-regular.woff') format('woff');
 }
 
 @font-face {
@@ -59,7 +59,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: block;
-  src: local(''), url('../fonts/cuprum-v13-latin_cyrillic-700.woff2') format('woff2'), url('../fonts/cuprum-v13-latin_cyrillic-700.woff') format('woff');
+  src: local(''), url('../fonts/cuprum-v13-latin-cyrillic-700.woff2') format('woff2'), url('../fonts/cuprum-v13-latin-cyrillic-700.woff') format('woff');
 }
 
 @font-face {
@@ -67,7 +67,7 @@
   font-style: italic;
   font-weight: 400;
   font-display: block;
-  src: local(''), url('../fonts/cuprum-v13-latin_cyrillic-italic.woff2') format('woff2'), url('../fonts/cuprum-v13-latin_cyrillic-italic.woff') format('woff');
+  src: local(''), url('../fonts/cuprum-v13-latin-cyrillic-italic.woff2') format('woff2'), url('../fonts/cuprum-v13-latin-cyrillic-italic.woff') format('woff');
 }
 
 @font-face {
@@ -75,7 +75,7 @@
   font-style: italic;
   font-weight: 700;
   font-display: block;
-  src: local(''), url('../fonts/cuprum-v13-latin_cyrillic-700italic.woff2') format('woff2'), url('../fonts/cuprum-v13-latin_cyrillic-700italic.woff') format('woff');
+  src: local(''), url('../fonts/cuprum-v13-latin-cyrillic-700italic.woff2') format('woff2'), url('../fonts/cuprum-v13-latin-cyrillic-700italic.woff') format('woff');
 }
 
 @font-face {
@@ -83,7 +83,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: local('PT Sans'), local('PTSans-Regular'), url('../fonts/pt-sans-v12-latin_cyrillic-regular.woff2') format('woff2'), url('../fonts/pt-sans-v12-latin_cyrillic-regular.woff') format('woff');
+  src: local('PT Sans'), local('PTSans-Regular'), url('../fonts/pt-sans-v12-latin-cyrillic-regular.woff2') format('woff2'), url('../fonts/pt-sans-v12-latin-cyrillic-regular.woff') format('woff');
 }
 
 @font-face {
@@ -91,7 +91,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: block;
-  src: local('PT Sans Bold'), local('PTSans-Bold'), url('../fonts/pt-sans-v12-latin_cyrillic-700.woff2') format('woff2'), url('../fonts/pt-sans-v12-latin_cyrillic-700.woff') format('woff');
+  src: local('PT Sans Bold'), local('PTSans-Bold'), url('../fonts/pt-sans-v12-latin-cyrillic-700.woff2') format('woff2'), url('../fonts/pt-sans-v12-latin-cyrillic-700.woff') format('woff');
 }
 
 @-webkit-keyframes fadeContent {
@@ -2157,7 +2157,7 @@
 }
 
 .page *:focus {
-  z-index: 2 !important;
+  z-index: 2;
 }
 
 .page *:focus-visible,
