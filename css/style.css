@@ -1447,7 +1447,8 @@
   background-image: url(../img/checkbox-off-hover.svg);
 }
 
-.filter-input-checkbox + label:active::before {
+.filter-input-checkbox + label:active::before,
+.filter-input-checkbox:disabled + label::before {
   background-image: url(../img/checkbox-off-active.svg);
 }
 
@@ -1460,7 +1461,8 @@
   background-image: url(../img/checkbox-on-hover.svg);
 }
 
-.filter-input-checkbox:checked + label:active::before {
+.filter-input-checkbox:checked + label:active::before,
+.filter-input-checkbox:checked:disabled + label::before {
   background-image: url(../img/checkbox-on-active.svg);
 }
 
@@ -1499,12 +1501,16 @@
 }
 
 .filter-input-checkbox + label:active,
-.filter-input-radio + label:active {
+.filter-input-radio + label:active,
+.filter-input-checkbox:disabled + label,
+.filter-input-radio:disabled + label {
   opacity: 0.4;
 }
 
 .filter-input-radio + label:active::before,
-.filter-input-radio:checked + label:active::after {
+.filter-input-radio:checked + label:active::after,
+.filter-input-radio:disabled:checked + label::after,
+.filter-input-radio:disabled + label::before {
   opacity: 0.75;
 }
 
