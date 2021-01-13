@@ -735,8 +735,7 @@
   font-size: 18px;
   display: flex;
   flex-wrap: wrap;
-  width: 889px;
-  margin: 40px 0 60px 25px;
+  margin: 40px 0 60px;
 }
 
 .header-site-navigation a {
@@ -745,7 +744,6 @@
   justify-content: center;
   height: 100%;
   width: 100%;
-  margin-right: 30px;
 }
 
 .header-site-navigation li {
